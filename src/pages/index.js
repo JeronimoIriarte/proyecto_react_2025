@@ -11,7 +11,15 @@ export default function Home() {
     <head>
       <Metatags />
     </head>
-    <body>
+    <body style={
+      {
+        margin: 0,
+        padding: 0,
+        boxSizing: "border-box",
+        backgroundColor: "#f4f4f4",
+        color: "#333"
+      }
+    }>
       <header>
         <Navbar />
       </header>
