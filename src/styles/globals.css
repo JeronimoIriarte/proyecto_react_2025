@@ -1,15 +1,14 @@
 :root {
-    --color-primary: #1A237E;
-    --color-secondary: #FF6A00;
-    --color-background: #000000;
-    --color-text: #333333;
-    font-family: roboto, sans-serif;
+  --color-primary: #1a237e;
+  --color-secondary: #f69335;
+  --color-background: #0a0a10;
+  --color-background-alt: #111;
+  --color-text: #ffffff;
+  font-family: roboto, sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-

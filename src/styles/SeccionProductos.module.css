@@ -1,10 +1,8 @@
-
-
 .productosSection {
   padding: 2rem;
   text-align: center;
-  background-color: #0A0A10; /* fondo negro */
-  color: white;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 .productosContainer {
@@ -16,13 +14,16 @@
 }
 
 .card {
-  background-color: #111;
+  background-color: var(--color-background-alt);
   border-radius: 8px;
   padding: 1rem;
   width: 200px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  justify-content: space-evenly;
   transition: transform 0.2s;
 }
 
@@ -32,7 +33,7 @@
 
 .cardImage {
   width: 100%;
-  height: auto;
+  height: 60%;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
@@ -44,15 +45,18 @@
 
 .card button {
   padding: 0.5rem 1rem;
-  background-color: #FF6A00;
+  background-color: var(--color-secondary);
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
+  width: 75%;
+  border-radius: 8px;
 }
 
-.titulo{
+.titulo {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-decoration: underline;
