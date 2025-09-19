@@ -31,7 +31,7 @@ export default function SeccionProductos() {
 
 return (
     <section className={styles.productosSection}>
-    <h2>Nuestros Productos</h2>
+    <h2 className={styles.titulo}>Nuestros Productos</h2>
     <div className={styles.productosContainer}>
         {productos.map((prod) => (
         <div key={prod.id} className={styles.card}>

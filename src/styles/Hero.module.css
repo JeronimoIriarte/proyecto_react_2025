@@ -1,14 +1,14 @@
 
 .hero {
-  background-color: #1A237E;
-  height: 60vh; /* altura del Hero, se puede ajustar */
+  background-color: #0A0A10;
+  height: 100vh; /* altura del Hero, se puede ajustar */
   display: flex; /* activamos flexbox para centrar */
   flex-direction: column; /* apila el logo y el contenido verticalmente */
   justify-content: center; /* centra verticalmente */
   align-items: center; /* centra horizontalmente */
   color: white; /* color del texto */
   text-align: center; /* centra el texto dentro de su contenedor */
-  margin-top: 1rem;
+  
 }
 
 .logoContainer {

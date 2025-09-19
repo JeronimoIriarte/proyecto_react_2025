@@ -12,28 +12,26 @@ export default function Home() {
       <Head>
         <Metatags />
       </Head>
+      <body style ={{ margin: 0, 
+                      padding: 0, 
+                      boxSizing: 'border-box', 
+                      fontFamily: 'Arial, sans-serif' }}>
 
-      <div style={{
-        margin: 0,
-        padding: 0,
-        boxSizing: "border-box",
-        backgroundColor: "#f4f4f4",
-        color: "#333"
-      }}>
+    
         <header>
           <Navbar />
         </header>
 
-        <main>
+        
           <SeccionPrincipal />
-          <SeccionProductos />
           <SeccionAbout />
-        </main>
+          <SeccionProductos />
+        
 
         <footer>
           <Footer />
         </footer>
-      </div>
+      </body>
     </>
   );
 }

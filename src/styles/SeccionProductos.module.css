@@ -3,7 +3,7 @@
 .productosSection {
   padding: 2rem;
   text-align: center;
-  background-color: #000; /* fondo negro */
+  background-color: #0A0A10; /* fondo negro */
   color: white;
 }
 
@@ -50,4 +50,10 @@
   cursor: pointer;
   font-weight: bold;
   text-align: center;
+}
+
+.titulo{
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
 }
