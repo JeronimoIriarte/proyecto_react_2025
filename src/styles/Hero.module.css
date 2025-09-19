@@ -1,0 +1,30 @@
+.hero {
+  background-color: var(--color-background);
+  height: 100vh; /* altura del Hero, se puede ajustar */
+  display: flex; /* activamos flexbox para centrar */
+  flex-direction: column; /* apila el logo y el contenido verticalmente */
+  justify-content: center; /* centra verticalmente */
+  align-items: center; /* centra horizontalmente */
+  color: var(--color-text); /* color del texto */
+  text-align: center; /* centra el texto dentro de su contenedor */
+}
+
+.logoContainer {
+  margin-bottom: 1rem; /* separa el logo del texto */
+}
+
+.logo {
+  max-width: 300px; /* ancho máximo del logo */
+  height: auto; /* mantiene la proporción del logo */
+}
+
+.hero-content button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}

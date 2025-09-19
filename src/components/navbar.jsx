@@ -12,7 +12,7 @@ export default function Navbar() {
                 <ul className={styles.navbarMenu}>
                     <li><a href="#" className={styles.navLink}>Inicio</a></li>
                     <li><a href="#" className={styles.navLink}>Productos</a></li>
-                    <li><a href="#" className={styles.navLink}>Ofertas</a></li>
+                    <li><a href="#" className={styles.navLink}>Nosotros</a></li>
                     <li><a href="#" className={styles.navLink}>Contacto</a></li>
                 </ul>
                 <div className={styles.navbarCart}>
