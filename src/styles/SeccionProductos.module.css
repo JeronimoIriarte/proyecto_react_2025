@@ -1,7 +1,7 @@
 .productosSection {
   padding: 2rem;
   text-align: center;
-  background-color: var(--color-background);
+  background-color: var(--color-background-masOpaco);
   color: var(--color-text);
 }
 
@@ -14,10 +14,10 @@
 }
 
 .card {
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background-masOpaco);
   border-radius: 8px;
   padding: 1rem;
-  width: 200px;
+  width: 220px;
   height: auto;
   display: flex;
   flex-direction: column;

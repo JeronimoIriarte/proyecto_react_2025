@@ -29,13 +29,10 @@
   margin-bottom: 15px;
 }
 
-/*
-.description {
-  font-size: 0.9em;
-  line-height: 1.6;
-  color: #cccccc;
-  max-width: 300px;
-} */
+.logoImage {
+  height: 80px;
+  width: auto;
+}
 
 /* --- ESTILOS PARA REDES SOCIALES --- */
 .socialIcons {

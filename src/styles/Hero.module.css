@@ -1,5 +1,5 @@
 .hero {
-  background-color: var(--color-background);
+  background-color: var(--color-background-opaco);
   height: 100vh; /* altura del Hero, se puede ajustar */
   display: flex; /* activamos flexbox para centrar */
   flex-direction: column; /* apila el logo y el contenido verticalmente */

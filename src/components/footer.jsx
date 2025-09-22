@@ -9,16 +9,13 @@ const Footer = () => {
         <div className={styles.logoSection}>
           <div className={styles.logoWrapper}>
             <img
-              src="logo_horizontal.png"
+              src="images/logo_horizontal.png"
               alt="Panozzo Logo"
               width={250}
-              height={80}
+              height={120}
               className={styles.logoImage}
             />
           </div>
-          {/*  <p className={styles.description}>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit.
-          </p> */}
           {/* Espacio para los iconos de redes sociales */}
           <div className={styles.socialIcons}>
             <a
@@ -27,7 +24,11 @@ const Footer = () => {
               rel="noopener noreferrer"
               className={styles.socialIcon}
             >
-              {/* Coloca aquí tu componente <Image> o ícono para Facebook */}
+              <img
+                src="images/logo_facebook.png"
+                alt="logo Facebook"
+                className={styles.socialIcon}
+              />
             </a>
             <a
               href="https://instagram.com"
@@ -35,7 +36,11 @@ const Footer = () => {
               rel="noopener noreferrer"
               className={styles.socialIcon}
             >
-              {/* Coloca aquí tu componente <Image> o ícono para Instagram */}
+              <img
+                src="images/logo_instagram.png"
+                alt="logo Instagram"
+                className={styles.socialIcon}
+              />
             </a>
             <a
               href="https://twitter.com"
@@ -43,14 +48,18 @@ const Footer = () => {
               rel="noopener noreferrer"
               className={styles.socialIcon}
             >
-              {/* Coloca aquí tu componente <Image> o ícono para Twitter */}
+              <img
+                src="images/logo_twitter.png"
+                alt="logo Twitter"
+                className={styles.socialIcon}
+              />
             </a>
           </div>
         </div>
 
         {/* Sección de Enlaces Rápidos */}
         <div className={styles.linksSection}>
-          <h4 className={styles.sectionTitle}>Enlaces Rápidos</h4>
+          <h2 className={styles.sectionTitle}>Enlaces Rápidos</h2>
           <ul className={styles.linkList}>
             <li>
               <a href="/" className={styles.link}>
@@ -77,7 +86,7 @@ const Footer = () => {
 
         {/* Sección de Información de Contacto */}
         <div className={styles.contactSection}>
-          <h4 className={styles.sectionTitle}>Información de Contacto</h4>
+          <h2 className={styles.sectionTitle}>Información de Contacto</h2>
           <p className={styles.contactItem}>+1 (555) 123-4567</p>
           <p className={styles.contactItem}>contacto@miapp.com</p>
           <p className={styles.contactItem}>123 Calle Principal</p>
@@ -88,7 +97,7 @@ const Footer = () => {
       {/* Sección de Derechos de Autor */}
       <div className={styles.copyrightSection}>
         <p>
-          © {new Date().getFullYear()} MiApp. Todos los derechos reservados.
+          © {new Date().getFullYear()} <b>Panozzo.com</b> Todos los derechos reservados.
         </p>
       </div>
     </footer>

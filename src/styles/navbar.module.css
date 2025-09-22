@@ -1,10 +1,12 @@
 /* --- Contenedor Principal del Header --- */
 .mainHeader {
-  background-color: #0a0a10;
+  background-color: var(--color-background-masOpaco);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-
 /* --- Estilos del Navbar --- */
 .navbar {
   display: flex;
@@ -13,9 +15,6 @@
   height: 60px;
   width: 100%;
   margin: 0 auto;
-  border-bottom: 2px solid #c5cae9;
-  border-left: 2px solid #c5cae9;
-  border-right: 2px solid #c5cae9;
 }
 
 /* --- Logo --- */
@@ -51,6 +50,12 @@
 .navLink:hover {
   color: var(--color-secondary);
   border-bottom: 2px solid #c5cae9;
+}
+
+.navbarScrolled {
+  background-color: var(--color-primary);
+  transition: background-color 0.5s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Carrito de Compras --- */
