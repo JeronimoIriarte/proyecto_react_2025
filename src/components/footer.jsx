@@ -1,13 +1,98 @@
-export default function Footer() {
+import React from "react";
+import styles from "../styles/footer.module.css"; // Asegúrate de que la ruta sea correcta
+
+const Footer = () => {
   return (
-    <footer className="">
-      <div className="">
-        <p className=""></p>
-        <div>
-          <a href="#" className=""></a>
-          <a href="#" className=""></a>
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        {/* Sección de Logo, Descripción y Redes Sociales */}
+        <div className={styles.logoSection}>
+          <div className={styles.logoWrapper}>
+            <img
+              src="logo_horizontal.png"
+              alt="Panozzo Logo"
+              width={250}
+              height={80}
+              className={styles.logoImage}
+            />
+          </div>
+          {/*  <p className={styles.description}>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit.
+          </p> */}
+          {/* Espacio para los iconos de redes sociales */}
+          <div className={styles.socialIcons}>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIcon}
+            >
+              {/* Coloca aquí tu componente <Image> o ícono para Facebook */}
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIcon}
+            >
+              {/* Coloca aquí tu componente <Image> o ícono para Instagram */}
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIcon}
+            >
+              {/* Coloca aquí tu componente <Image> o ícono para Twitter */}
+            </a>
+          </div>
         </div>
+
+        {/* Sección de Enlaces Rápidos */}
+        <div className={styles.linksSection}>
+          <h4 className={styles.sectionTitle}>Enlaces Rápidos</h4>
+          <ul className={styles.linkList}>
+            <li>
+              <a href="/" className={styles.link}>
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="/productos" className={styles.link}>
+                Productos
+              </a>
+            </li>
+            <li>
+              <a href="/ofertas" className={styles.link}>
+                Ofertas
+              </a>
+            </li>
+            <li>
+              <a href="/contacto" className={styles.link}>
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Sección de Información de Contacto */}
+        <div className={styles.contactSection}>
+          <h4 className={styles.sectionTitle}>Información de Contacto</h4>
+          <p className={styles.contactItem}>+1 (555) 123-4567</p>
+          <p className={styles.contactItem}>contacto@miapp.com</p>
+          <p className={styles.contactItem}>123 Calle Principal</p>
+          <p className={styles.contactItem}>Ciudad, Estado 12345</p>
+        </div>
+      </div>
+
+      {/* Sección de Derechos de Autor */}
+      <div className={styles.copyrightSection}>
+        <p>
+          © {new Date().getFullYear()} MiApp. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
