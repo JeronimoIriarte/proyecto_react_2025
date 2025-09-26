@@ -1,11 +1,13 @@
 /* --- Contenedor Principal del Header --- */
 .mainHeader {
-  background-color: var(--color-background-masOpaco);
+  width: 100%;
+  background-color: #00000000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
+  position: absolute;
 }
 /* --- Estilos del Navbar --- */
 .navbar {
@@ -15,6 +17,7 @@
   height: 60px;
   width: 100%;
   margin: 0 auto;
+  
 }
 
 /* --- Logo --- */
@@ -39,7 +42,7 @@
 }
 
 .navLink {
-  color: var(--color-text);
+  color: var(--color-text-alt);
   text-decoration: none;
   font-size: 1.2rem;
   padding: 5px 0;
@@ -53,7 +56,8 @@
 }
 
 .navbarScrolled {
-  background-color: var(--color-primary);
+  color: var(--color-text-alt);
+  background-color: var(--color-background-alt);
   transition: background-color 0.5s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

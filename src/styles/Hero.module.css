@@ -1,21 +1,46 @@
 .hero {
-  background-color: var(--color-background-opaco);
-  height: 100vh; /* altura del Hero, se puede ajustar */
-  display: flex; /* activamos flexbox para centrar */
-  flex-direction: column; /* apila el logo y el contenido verticalmente */
-  justify-content: center; /* centra verticalmente */
-  align-items: center; /* centra horizontalmente */
-  color: var(--color-text); /* color del texto */
-  text-align: center; /* centra el texto dentro de su contenedor */
+  background-image: url("/images/estadio.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 106.2%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .logoContainer {
-  margin-bottom: 1rem; /* separa el logo del texto */
+  margin-bottom: 1rem;
+  /* separa el logo del texto */
 }
 
 .logo {
-  max-width: 300px; /* ancho máximo del logo */
-  height: auto; /* mantiene la proporción del logo */
+  max-width: 350px;
+  height: auto;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: var(--color-text-alt);
 }
 
 .hero-content button {

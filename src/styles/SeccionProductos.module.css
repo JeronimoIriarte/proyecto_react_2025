@@ -1,63 +1,18 @@
 .productosSection {
-  padding: 2rem;
+  padding: 4rem 2rem;
   text-align: center;
   background-color: var(--color-background-masOpaco);
   color: var(--color-text);
+  height: 100%;
 }
 
-.productosContainer {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+.productosSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
 }
 
 .card {
-  background-color: var(--color-background-masOpaco);
-  border-radius: 8px;
-  padding: 1rem;
-  width: 220px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: space-evenly;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.cardImage {
   width: 100%;
-  height: 60%;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.card h3,
-.card p {
-  margin: 0.5rem 0;
-}
-
-.card button {
-  padding: 0.5rem 1rem;
-  background-color: var(--color-secondary);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-  width: 75%;
-  border-radius: 8px;
-}
-
-.titulo {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-decoration: underline;
+  height: 100%;
 }

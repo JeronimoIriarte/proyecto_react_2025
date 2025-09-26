@@ -4,6 +4,7 @@ import styles from '../styles/navbar.module.css';
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
 
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) { // Cambia el valor según cuándo quieras que se active
@@ -25,13 +26,13 @@ export default function Navbar() {
             <div className={`${styles.mainHeader} ${isScrolled ? styles.navbarScrolled : ''}`}>
                 <nav className={styles.navbar}>
                     <a href="#" className={styles.navbarLogo}>
-                        <img src="/images/logo.png" alt="panozzo" className={styles.logoPrincipal} />
+                        <img src="/images/logo_horizontal.png" alt="panozzo" className={styles.logoPrincipal} />
                     </a>
                     <ul className={styles.navbarMenu}>
-                        <li><a href="#" className={styles.navLink}>Inicio</a></li>
-                        <li><a href="#" className={styles.navLink}>Productos</a></li>
-                        <li><a href="#" className={styles.navLink}>Nosotros</a></li>
-                        <li><a href="#" className={styles.navLink}>Contacto</a></li>
+                        <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Inicio</a></li>
+                        <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Productos</a></li>
+                        <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Nosotros</a></li>
+                        <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Contacto</a></li>
                     </ul>
                     <div className={styles.navbarCart}>
                         <a href="#" className={styles.cartIcon}>
