@@ -1,0 +1,64 @@
+/* SeccionContacto.module.css */
+
+/* Contenedor principal */
+.seccionContacto {
+  padding: 3rem; /* Espacio interno */
+  max-width: 600px; /* Ancho máximo del formulario */
+  margin: 3rem auto; /* Centrar horizontalmente y dar espacio arriba/abajo */
+  background-color: black;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 2px 4px 6px #ff8c00; /* Sombra ligera */
+  text-align: center; /* Centrar textos */
+}
+
+/* Título */
+.titulo {
+  font-size: 2rem; /* Tamaño de letra grande */
+  margin-bottom: 0.5rem; /* Espacio debajo */
+  color: #ff8c00;
+  font-family:  roboto, sans-serif;
+}
+
+/* Subtítulo */
+.subtitulo {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #ff8c00;
+  font-family:  roboto, sans-serif;
+}
+
+/* Formulario */
+.formulario {
+  display: flex;
+  flex-direction: column; /* Apilar inputs verticalmente */
+  gap: 1rem; /* Espacio entre cada input */
+}
+
+/* Estilos de los inputs */
+.formulario input {
+  padding: 0.8rem;
+  border: 1px solid #ff8c00;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family:  roboto, sans-serif;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+/* Botón de envío */
+.formulario button {
+  padding: 1rem;
+  background-color: #ff8c00;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-family:  roboto, sans-serif;
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: 0.3s; /* Suaviza la transición del hover */
+}
+
+/* Efecto hover del botón */
+.formulario button:hover {
+  cursor: pointer;
+  transform: translate(3px );
+}
