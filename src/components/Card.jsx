@@ -24,6 +24,7 @@ const Tarjeta = (props) => {
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin-bottom: 50px;
 }
 
 .image{

@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 106.2%;
+  height: 100%;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -26,7 +26,6 @@
 
 .logoContainer {
   margin-bottom: 1rem;
-  /* separa el logo del texto */
 }
 
 .logo {

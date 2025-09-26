@@ -39,35 +39,35 @@ export default function SeccionProductos() {
 
   return (
     <>
-    <section className={styles.productosSection}>
+      <section className={styles.productosSection}>
         <h2>Ofertas</h2>
         <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={20}
-            slidesPerView={2} // Muestra 3 imágenes a la vez
-            navigation // Habilita las flechas de navegación
-            pagination={{ clickable: true }} // Habilita los puntos de paginación
-            breakpoints={{
-                470: {
-                    slidesPerView: 1, // 1 imagen en pantallas pequeñas
-                },
-                790: {
-                    slidesPerView: 2, // 2 imágenes en pantallas medianas
-                },
-            }}
+          modules={[Navigation, Pagination]}
+          spaceBetween={20}
+          slidesPerView={2} // Muestra 3 imágenes a la vez
+          navigation // Habilita las flechas de navegación
+          pagination={{ clickable: true }} // Habilita los puntos de paginación
+          breakpoints={{
+            470: {
+              slidesPerView: 1, // 1 imagen en pantallas pequeñas
+            },
+            790: {
+              slidesPerView: 2, // 2 imágenes en pantallas medianas
+            },
+          }}
         >
-            {productos.map((src, pepe) => (
-                <SwiperSlide key={pepe}>
-                    <div className={styles.card}>
-                        <Card key={pepe} productos={src} />
-                    </div>
-                </SwiperSlide>
-            ))}
+          {productos.map((src, pepe) => (
+            <SwiperSlide key={pepe}>
+              <div className={styles.card}>
+                <Card key={pepe} productos={src} />
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
-    </section>
-    <style jsx>{`
+      </section>
+      <style jsx>{`
 
     `}</style>
     </>
-);
+  );
 };
