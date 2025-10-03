@@ -12,17 +12,17 @@ export default function Home() {
       <Head>
         <Metatags />
       </Head>
-        <div>
-          <header>
-            <Navbar />
-          </header>
-          <SeccionPrincipal />
-          <SeccionAbout />
-          <SeccionProductos />
-          <footer>
-            <Footer />
-          </footer>
-        </div>
+      <div>
+        <header>
+          <Navbar />
+        </header>
+        <SeccionPrincipal />
+        <SeccionAbout />
+        <SeccionProductos />
+        <footer>
+          <Footer />
+        </footer>
+      </div>
     </>
   );
 }

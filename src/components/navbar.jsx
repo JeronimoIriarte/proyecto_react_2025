@@ -35,10 +35,7 @@ export default function Navbar() {
                         <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Contacto</a></li>
                     </ul>
                     <div className={styles.navbarCart}>
-                        <a href="#" className={styles.cartIcon}>
-                            <img src="/images/carrito.png" alt="Carrito de Compras" className={styles.cartImage} />
-                            <span className={styles.cartItemCount}>3</span>
-                        </a>
+                        <a href="">Iniciar sesion</a>
                     </div>
                 </nav>
             </div>

@@ -62,27 +62,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Carrito de Compras --- */
-.navbarCart {
-  position: relative;
-}
 
-.cartIcon {
-  font-size: 1.8rem;
-  color: var(--text-light);
-  text-decoration: none;
-  position: relative;
-  right: 20px;
-}
 
-.cartIcon:hover {
-  color: #c5cae9;
-}
-
-.cartImage {
-  height: 32px;
-  width: auto;
-}
 
 /* --- Notificación del Carrito --- */
 .cartItemCount {

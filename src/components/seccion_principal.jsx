@@ -1,9 +1,11 @@
 import styles from "../styles/Hero.module.css";
+import Link from "next/link";
 
 export default function SeccionPrincipal() {
   return (
     <section className={styles.hero}>
       <div className={styles.filtro}>
+      <Link href="/crud">Ir a CRUD</Link>
         <div className={styles.logoContainer}>
           <img src="/images/logo.png" alt="Logo PANOZZO" className={styles.logo} />
         </div>
