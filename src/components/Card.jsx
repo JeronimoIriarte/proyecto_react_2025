@@ -49,7 +49,7 @@ const Tarjeta = (props) => {
     }
 
 button {
-    background-color: var(--color-background-alt); ;
+    background-color: var(--color-secondary); ;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 4px 3px -3px gray;

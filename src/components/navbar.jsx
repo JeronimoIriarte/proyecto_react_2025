@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/navbar.module.css';
-
+import Link from 'next/link';
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -29,16 +29,16 @@ export default function Navbar() {
                         <img src="/images/logo_horizontal.png" alt="panozzo" className={styles.logoPrincipal} />
                     </a>
                     <ul className={styles.navbarMenu}>
-                        <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Inicio</a></li>
-                        <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Productos</a></li>
-                        <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Nosotros</a></li>
-                        <li><a href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Contacto</a></li>
+                        <li><Link href="/" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Inicio</Link></li>
+                        <li><Link href="/productos" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Productos</Link></li>
+                        <li><Link href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Nosotros</Link></li>
+                        <li><Link href="#" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Contacto</Link></li>
                     </ul>
                     <div className={styles.navbarCart}>
-                        <a href="#" className={styles.cartIcon}>
+                        <Link href="#" className={styles.cartIcon}>
                             <img src="/images/carrito.png" alt="Carrito de Compras" className={styles.cartImage} />
                             <span className={styles.cartItemCount}>3</span>
-                        </a>
+                        </Link>
                     </div>
                 </nav>
             </div>

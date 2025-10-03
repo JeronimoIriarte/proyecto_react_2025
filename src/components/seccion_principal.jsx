@@ -5,7 +5,11 @@ export default function SeccionPrincipal() {
     <section className={styles.hero}>
       <div className={styles.filtro}>
         <div className={styles.logoContainer}>
-          <img src="/images/logo.png" alt="Logo PANOZZO" className={styles.logo} />
+          <img
+            src="/images/logo.png"
+            alt="Logo PANOZZO"
+            className={styles.logo}
+          />
         </div>
         <div className={styles["hero-content"]}>
           <h1>Bienvenido a PANOZZO</h1>

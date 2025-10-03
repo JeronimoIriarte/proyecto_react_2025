@@ -54,6 +54,9 @@ export default function SeccionProductos() {
             790: {
               slidesPerView: 2, // 2 imágenes en pantallas medianas
             },
+            1024: {
+              slidesPerView: 3, // 3 imágenes en pantallas grandes
+            },
           }}
         >
           {productos.map((src, pepe) => (
