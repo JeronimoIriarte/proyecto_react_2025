@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 import ProductCard from '@/components/Crud_page/CrudCard';
 import productsData from "../data/products.json";
 import { Form_crud } from '@/components/Crud_page/Form_crud';
 
 export const Crud = () => {
+
+    const [db, setdb] = useState(productsData);
+
     return (
         <>
             <div>
@@ -12,7 +15,7 @@ export const Crud = () => {
             </div>
                 <Form_crud/>
             <div className="productGrid">
-                {productsData.map((product) => (
+                {db.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}
             </div>
