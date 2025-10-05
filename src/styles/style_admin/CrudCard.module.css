@@ -55,6 +55,7 @@
 .buttonsContainer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   gap: 1rem;
 }
 
@@ -68,16 +69,22 @@
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
-
 .cardButton:nth-child(2){
+  background-color: #ffa500;
+}
+
+.cardButton:nth-child(3){
   background-color: #ff0000;
 }
 
 .cardButton:hover {
   background-color: #0056b3;
 }
-
 .cardButton:nth-child(2):hover {
+  background-color: #cc8400;
+}
+
+.cardButton:nth-child(3):hover {
   background-color: #cc2222;
 }
 

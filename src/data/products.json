@@ -1,4 +1,5 @@
-[
+
+{"products":[
     {
         "id": 1,
         "title": "Camiseta Selección Argentina 2024",
@@ -63,4 +64,4 @@
         "image_alt": null,
         "description": "lorem ipsum dolor sit amet"
     }
-]
+]}

@@ -1,11 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; 
 import ProductCard from '@/components/Crud_page/CrudCard';
 import productsData from "../data/products.json";
 import { Form_crud } from '@/components/Crud_page/Form_crud';
+import axios from 'axios';
+
 
 export const Crud = () => {
 
-    const [db, setdb] = useState(productsData);
+    const [db, setdb] = useState(productsData.products);
+    const [dataToEdit, setDataToEdit] = useState(null);
+
+    const readDb = async () => {
+        const ENDPOINT = "http://localhost:5000/products"
+        const response = await axios.get(ENDPOINT);
+        const products = response.data;
+        setdb(() => products);
+    }
+    useEffect(() => {
+        readDb();
+    }, []);
+
+    const createProduct=() => {}
+
+    const updateProduct=() => {}
+
+    const deleteProduct=(id) => {
+        console.log(id);
+    }
 
     return (
         <>
@@ -13,10 +34,11 @@ export const Crud = () => {
                 <h1>CRUD Page</h1>
                 <p>This is a placeholder for the CRUD operations page.</p>
             </div>
-                <Form_crud/>
+                <Form_crud createProduct={createProduct} updateProduct={updateProduct} setDataToEdit={setDataToEdit} dataToEdit={dataToEdit} />
+                
             <div className="productGrid">
                 {db.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} />
                 ))}
             </div>
             <style jsx>{`
