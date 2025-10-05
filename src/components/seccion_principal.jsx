@@ -1,4 +1,4 @@
-import styles from "../styles/Hero.module.css";
+import styles from "../styles/style_principal/Hero.module.css";
 import Link from "next/link";
 
 export default function SeccionPrincipal() {

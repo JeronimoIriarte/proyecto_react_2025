@@ -76,11 +76,6 @@ const Footer = () => {
                 Ofertas
               </a>
             </li>
-            <li>
-              <a href="/contacto" className={styles.link}>
-                Contacto
-              </a>
-            </li>
           </ul>
         </div>
 
