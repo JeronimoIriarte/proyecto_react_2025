@@ -7,6 +7,9 @@ import productsData from "../data/products.json";
 import styles from '../styles/style_productos/Productos.module.css';
 
 export default function Productos() {
+
+  const producto = productsData.products;
+  
   return (
     <>
       <Head>
@@ -27,8 +30,8 @@ export default function Productos() {
           <h2 className={styles.pageTitle}>Catálogo de Productos</h2>
 
           <div className={styles.productGrid}>
-            {productsData.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {producto.map((producto) => (
+              <ProductCard key={producto.id} product={producto} />
             ))}
           </div>
         </main>
