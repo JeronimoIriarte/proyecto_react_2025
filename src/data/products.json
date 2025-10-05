@@ -4,6 +4,7 @@
         "title": "Camiseta Selección Argentina 2024",
         "price": "$75.000",
         "image": "/images/camiseta_arg_2024_frente.jpg",
+        "image_alt": null,
         "description": "Luce los colores de la Scaloneta con la camiseta titular de la Selección Argentina. Fabricada con tecnología HEAT.RDY para mantenerte fresco en los momentos más intensos. Escudo bordado y diseño de tres estrellas."
     },
     {
@@ -11,6 +12,7 @@
         "title": "Camiseta Retro Argentina '86",
         "price": "$58.000",
         "image": "/images/retroarg.jpg",
+        "image_alt": null,
         "description": "Revive la gloria del '86 con esta réplica de la camiseta usada por los campeones del mundo. Un diseño icónico y atemporal para los verdaderos fanáticos del fútbol. Calidad premium y detalles fieles al original."
     },
     {
@@ -18,6 +20,7 @@
         "title": "Buzo Retro Argentina",
         "price": "$65.000",
         "image": "/images/buzo_retro_arg_1999_delante.jpg",
+        "image_alt": null,
         "description": "Entrena como los profesionales con el buzo oficial de la AFA. Su tejido ligero y transpirable te ofrece comodidad y libertad de movimiento. Perfecto para tus entrenamientos o para un look casual y deportivo."
     },
     {
@@ -25,6 +28,7 @@
         "title": "Buzo Retro Estudiantes",
         "price": "$40.000",
         "image": "/images/buzo_retro_estudiantes_frente.jpg",
+        "image_alt": null,
         "description": "Muestra tu pasión por Estudiantes con este buzo retro. Diseño clásico con los colores tradicionales del club. Ideal para los días frescos, combina estilo y comodidad en una sola prenda."
     },
     {
@@ -32,6 +36,7 @@
         "title": "nombre",
         "price": "$precio",
         "image": "/images/imageName.jpg",
+        "image_alt": null,
         "description": "lorem ipsum dolor sit amet"
     },
     {
@@ -39,6 +44,7 @@
         "title": "nombre",
         "price": "$precio",
         "image": "/images/imageName.jpg",
+        "image_alt": null,
         "description": "lorem ipsum dolor sit amet"
     },
     {
@@ -46,6 +52,7 @@
         "title": "nombre",
         "price": "$precio",
         "image": "/images/imageName.jpg",
+        "image_alt": null,
         "description": "lorem ipsum dolor sit amet"
     },
     {
@@ -53,34 +60,7 @@
         "title": "nombre",
         "price": "$precio",
         "image": "/images/imageName.jpg",
-        "description": "lorem ipsum dolor sit amet"
-    },
-    {
-        "id": 9,
-        "title": "nombre",
-        "price": "$precio",
-        "image": "/images/imageName.jpg",
-        "description": "lorem ipsum dolor sit amet"
-    },
-    {
-        "id": 10,
-        "title": "nombre",
-        "price": "$precio",
-        "image": "/images/imageName.jpg",
-        "description": "lorem ipsum dolor sit amet"
-    },
-    {
-        "id": 11,
-        "title": "nombre",
-        "price": "$precio",
-        "image": "/images/imageName.jpg",
-        "description": "lorem ipsum dolor sit amet"
-    },
-    {
-        "id": 12,
-        "title": "nombre",
-        "price": "$precio",
-        "image": "/images/imageName.jpg",
+        "image_alt": null,
         "description": "lorem ipsum dolor sit amet"
     }
 ]

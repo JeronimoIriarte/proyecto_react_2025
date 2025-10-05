@@ -1,4 +1,4 @@
-import styles from '../styles/SeccionAbout.module.css';
+import styles from '../../styles/style_index/SeccionAbout.module.css';
 
 export default function SeccionAbout() {
     return (

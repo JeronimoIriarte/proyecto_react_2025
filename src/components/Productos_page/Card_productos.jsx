@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/ProductCard.module.css';
+import styles from '../../styles/style_productos/Card_productos.module.css';
 
 export default function ProductCard({ product }) {
   // Estado para controlar la visibilidad del modal
