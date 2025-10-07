@@ -28,7 +28,7 @@ export default function CrudCard({ product, deleteProduct, setDataToEdit }) {
                     <button onClick={() => setDataToEdit(product)} className={styles.cardButton}>
                         Editar producto
                     </button>
-                    <button onClick={() => deleteProduct(id)} className={styles.cardButton}>
+                    <button onClick={() => deleteProduct(product)} className={styles.cardButton}>
                         Eliminar producto
                     </button>
                     </div>
@@ -46,7 +46,7 @@ export default function CrudCard({ product, deleteProduct, setDataToEdit }) {
                             <h2>{title}</h2>
                             <p className={styles.modalPrice}>{price}</p>
                             <p className={styles.modalDescription}>{description}</p>
-                            <button className={styles.deleteButton}>ELIMINAR PRODUCTO</button>
+                            <button className={styles.deleteButton} onClick={()=> deleteProduct(product)}>ELIMINAR PRODUCTO</button>
                         </div>
                     </div>
                 </div>

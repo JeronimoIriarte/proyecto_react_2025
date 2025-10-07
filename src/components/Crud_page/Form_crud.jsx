@@ -45,7 +45,7 @@ export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (!formData.title || !formData.price || !formData.image || !formData.image_alt || !formData.description) {
+        if (!formData.title || !formData.price || !formData.description) {
             alert("Datos incompletos");
             return;
         }
@@ -67,34 +67,6 @@ export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
             <form onSubmit={handleSubmit} onReset={handleReset}>
                 <input type="text" name='title' placeholder="title" onChange={handleChange} value={formData.title} />
                 <input type="text" name='price' placeholder="price" onChange={handleChange} value={formData.price} />
-                <input type="file" name='image' id="image" accept="image/*" onChange={handleChange} ></input>
-                {formData.image && (
-                    <div>
-                        <p>Vista previa de la imagen:</p>
-                        <img
-                            src={
-                                typeof formData.image === 'string'
-                                    ? formData.image
-                                    : URL.createObjectURL(formData.image)
-                            }
-                            style={{ width: '200px', height: 'auto' }}
-                        />
-                    </div>
-                )}
-                <input type="file" name='image_alt' id="image_alt" accept="image/*" onChange={handleChange}></input>
-                {formData.image_alt && (
-                    <div>
-                        <p>Vista previa de la imagen:</p>
-                        <img
-                            src={
-                                typeof formData.image_alt === 'string'
-                                    ? formData.image_alt 
-                                    : URL.createObjectURL(formData.image_alt)
-                            }
-                            style={{ width: '200px', height: 'auto' }}
-                        />
-                    </div>
-                )}
                 <input type="text" name='description' placeholder='description' onChange={handleChange} value={formData.description} />
                 <input type="submit" value="Enviar" onClick={handleSubmit} />
                 <input type="reset" value="Limpiar" onClick={handleReset} />
