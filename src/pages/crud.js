@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import ProductCard from '@/components/Crud_page/CrudCard';
 import productsData from "../data/products.json";
 import { Form_crud } from '@/components/Crud_page/Form_crud';
@@ -20,36 +20,52 @@ export const Crud = () => {
         readDb();
     }, []);
 
-    const createProduct=() => {}
+    const createProduct = async (product) => {
+        
+        product.id = String(Date.now());
+        
+        const ENDPOINT = "http://localhost:5000/products"
+        
+        const request = {
+            method: "POST",
+            headers: { "content-ype": "application/json" },
+            data: JSON.stringify(product)
+        }
 
-    const updateProduct=() => {}
+            await axios(ENDPOINT, request);
 
-    const deleteProduct=(id) => {
-        console.log(id);
+            readDb();
     }
 
-    return (
-        <>
-            <div>
-                <h1>CRUD Page</h1>
-                <p>This is a placeholder for the CRUD operations page.</p>
-            </div>
+        const updateProduct = (product) => {
+            console.log(product);
+        }
+
+        const deleteProduct = (id) => {
+            console.log(id);
+        }
+
+        return (
+            <>
+                <div>
+                    <h1>CRUD Page</h1>
+                    <p>This is a placeholder for the CRUD operations page.</p>
+                </div>
                 <Form_crud createProduct={createProduct} updateProduct={updateProduct} setDataToEdit={setDataToEdit} dataToEdit={dataToEdit} />
-                
-            <div className="productGrid">
-                {db.map((product) => (
-                    <ProductCard key={product.id} product={product} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} />
-                ))}
-            </div>
-            <style jsx>{`
+
+                <div className="productGrid">
+                    {db.map((product) => (
+                        <ProductCard key={product.id} product={product} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} />
+                    ))}
+                </div>
+                <style jsx>{`
         .productGrid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 2rem;
 }
             `}</style>
-        </>
-    )
-}
-
+            </>
+        )
+    }
 export default Crud;
