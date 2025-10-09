@@ -1,6 +1,13 @@
-import "@/styles/globals.css";
+import ShoppingCartContextProvider from './carrito/ShoppingCartContextProvider';
+import '../styles/globals.css';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }) {
+  return (
+    <ShoppingCartContextProvider>
+      <Component {...pageProps} />
+    </ShoppingCartContextProvider>
+  );
 }
+
+export default MyApp;
 

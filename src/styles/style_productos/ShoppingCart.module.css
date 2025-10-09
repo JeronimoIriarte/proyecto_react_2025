@@ -1,0 +1,74 @@
+/* Estilo para el Hero específico del carrito */
+.hero {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-image: url('/images/estadio.webp'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Estilos para el componente ShoppingCart */
+.cartContainer {
+  width: 100%;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.continueShoppingLink {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.continueShoppingLink:hover {
+  text-decoration: underline;
+}
+
+.clearButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.clearButton:hover {
+  background-color: #c82333;
+}
+
+.emptyCartMessage {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6c757d;
+  padding: 3rem 0;
+}
+
+.cartTotal {
+    text-align: right;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}

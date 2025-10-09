@@ -36,7 +36,7 @@ export default function Navbar() {
                         <li><Link href="#footer" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Contacto</Link></li>
                     </ul>
                     <div className={styles.asd}>
-                        
+                        <Link href="/carrito/cart">Ir al carrito</Link>
                     </div>
                 </nav>
             </div>

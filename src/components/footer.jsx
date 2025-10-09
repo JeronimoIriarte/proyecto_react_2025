@@ -9,7 +9,7 @@ const Footer = () => {
         <div className={styles.logoSection}>
           <div className={styles.logoWrapper}>
             <img
-              src="images/logo_horizontal.png"
+              src="/images/logo_horizontal.png"
               alt="Panozzo Logo"
               width={250}
               height={120}
@@ -25,7 +25,7 @@ const Footer = () => {
               className={styles.socialIcon}
             >
               <img
-                src="images/logo_facebook.png"
+                src="/images/logo_facebook.png"
                 alt="logo Facebook"
                 className={styles.socialIcon}
               />
@@ -37,7 +37,7 @@ const Footer = () => {
               className={styles.socialIcon}
             >
               <img
-                src="images/logo_instagram.png"
+                src="/images/logo_instagram.png"
                 alt="logo Instagram"
                 className={styles.socialIcon}
               />
@@ -49,7 +49,7 @@ const Footer = () => {
               className={styles.socialIcon}
             >
               <img
-                src="images/logo_twitter.png"
+                src="/images/logo_twitter.png"
                 alt="logo Twitter"
                 className={styles.socialIcon}
               />
@@ -72,8 +72,8 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/ofertas" className={styles.link}>
-                Ofertas
+              <a href="/nosotros" className={styles.link}>
+                Nosotros
               </a>
             </li>
             <li>
