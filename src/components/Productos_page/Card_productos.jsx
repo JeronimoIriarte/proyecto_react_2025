@@ -10,14 +10,14 @@ export default function ProductCard({ product }) {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-    const [currentImage, setCurrentImage] = useState(product.image);
+    const [currentImage, setCurrentImage] = useState(product.imageUrl);
     const handleMouseEnter = () => {
-      if (product.image_alt) {
-        setCurrentImage(product.image_alt);
+      if (product.imageAltUrl) {
+        setCurrentImage(product.imageAltUrl);
       }
     };
     const handleMouseLeave = () => {
-      setCurrentImage(product.image);
+      setCurrentImage(product.imageUrl);
     };
 
   return (

@@ -1,0 +1,6 @@
+.contenedor_productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    background-color: #f0f0f0;
+}

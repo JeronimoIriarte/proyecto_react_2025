@@ -3,7 +3,7 @@ import styles from "../styles/footer.module.css"; // Asegúrate de que la ruta s
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer id="footer" className={styles.footer}>
       <div className={styles.container}>
         {/* Sección de Logo, Descripción y Redes Sociales */}
         <div className={styles.logoSection}>

@@ -3,6 +3,7 @@ import ProductCard from '@/components/Crud_page/CrudCard';
 import productsData from "../data/products.json";
 import { Form_crud } from '@/components/Crud_page/Form_crud';
 import axios from 'axios';
+import styles from '../styles/style_PanelDeControl/panelDeControl.module.css';
 
 
 export const Crud = () => {
@@ -33,6 +34,8 @@ export const Crud = () => {
         }
 
         await axios(ENDPOINT, request);
+
+        console.log(product);
 
         readDb();
     }
@@ -68,7 +71,7 @@ export const Crud = () => {
         if (isConfirmed) {
             await axios(ENDPOINT, request);
             readDb();
-            
+
         } else {
             return;
         }
@@ -78,24 +81,17 @@ export const Crud = () => {
 
     return (
         <>
-            <div>
-                <h1>CRUD Page</h1>
-                <p>This is a placeholder for the CRUD operations page.</p>
-            </div>
             <Form_crud createProduct={createProduct} updateProduct={updateProduct} setDataToEdit={setDataToEdit} dataToEdit={dataToEdit} />
+            <div className={styles.contenedor_Principal}>
+                <div className={styles.contenedor_filtro}>
 
-            <div className="productGrid">
-                {db.map((product) => (
-                    <ProductCard key={product.id} product={product} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} />
-                ))}
+                </div>
+                <div className={styles.contenedor_productos}>
+                    {db.map((product) => (
+                        <ProductCard key={product.id} product={product} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} />
+                    ))}
+                </div>
             </div>
-            <style jsx>{`
-        .productGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-}
-            `}</style>
         </>
     )
 }

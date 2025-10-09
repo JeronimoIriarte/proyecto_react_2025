@@ -1,18 +1,23 @@
 import React from 'react'
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import axios from 'axios';
+import cloudinaryConfig from "../../pages/cloudinaryConfig";
+import styles from '../../styles/style_admin/CrudForm.module.css'
 
 const initialForm = {
     id: null,
     title: '',
     price: '',
-    image: null,
-    image_alt: null,
+    imageUrl: '',
+    imageAltUrl: '',
     description: ''
 };
 
 export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
 
     const [formData, setFormData] = useState(initialForm);
+
 
     useEffect(() => {
         if (dataToEdit) {
@@ -24,28 +29,38 @@ export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
 
 
     const handleChange = (event) => {
-        setFormData((prevFormData) => {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
-            const { name, value, type, files } = event.target;
+    const handleImageChange = async (event, type) => {
+        const file = event.target.files[0];
+        if (file) {
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("upload_preset", cloudinaryConfig.uploadPreset);
 
-            if (type === "file") {
-                return {
+            try {
+                const response = await axios.post(
+                    `https://api.cloudinary.com/v1_1/${cloudinaryConfig.cloudName}/image/upload`,
+                    formData
+                );
+                const imageUrl = response.data.secure_url;
+                setFormData((prevFormData) => ({
                     ...prevFormData,
-                    [name]: files[0]
-                };
-            } else {
-                return {
-                    ...prevFormData,
-                    [name]: value
-                };
+                    [type]: imageUrl, 
+                }));
+
+            } catch (error) {
+                console.error("Error al subir la imagen:", error);
             }
-        })
-    }
+        }
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (!formData.title || !formData.price || !formData.description) {
+        if (!formData.title || !formData.price || !formData.description || !formData.imageUrl || !formData.imageAltUrl) {
             alert("Datos incompletos");
             return;
         }
@@ -63,14 +78,33 @@ export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
 
     return (
         <>
-            <h2>Titulo</h2>
-            <form onSubmit={handleSubmit} onReset={handleReset}>
-                <input type="text" name='title' placeholder="title" onChange={handleChange} value={formData.title} />
-                <input type="text" name='price' placeholder="price" onChange={handleChange} value={formData.price} />
-                <input type="text" name='description' placeholder='description' onChange={handleChange} value={formData.description} />
-                <input type="submit" value="Enviar" onClick={handleSubmit} />
-                <input type="reset" value="Limpiar" onClick={handleReset} />
-            </form>
+            <Link href="/" className={styles.inicioButton}>Volver A La Pagina Principal</Link>
+            <div className={styles.formPage}>
+                <h2 className={styles.titulo}>Panel de control</h2>
+                <form className={styles.form} onSubmit={handleSubmit} onReset={handleReset}>
+                    <input className={styles.input} type="text" name='title' placeholder="Titulo" onChange={handleChange} value={formData.title} />
+
+                    <input className={styles.input} type="text" name='price' placeholder="Precio" onChange={handleChange} value={formData.price} />
+
+                    <input className={styles.input_img} type="file" accept="image/*" onChange={(e) => handleImageChange(e, "imageUrl")} />
+                    {formData.imageUrl && <img src={formData.imageUrl} alt="Vista previa" width="200" />}
+
+                    <input className={styles.input_imgAlt} type="file" accept="image/*" onChange={(e) => handleImageChange(e, "imageAltUrl")} />
+                    {formData.imageAltUrl && <img src={formData.imageAltUrl} alt="Vista previa" width="200" />}
+
+                    <textarea className={`${styles.input} ${styles.inputDescription}`} name='description' onChange={handleChange} value={formData.description} placeholder='Descripcion del producto'></textarea>
+
+                    <div className={styles.buttonContainer}>
+                        <input className={styles.inputButton} type="submit" value="Enviar" onClick={handleSubmit} />
+                        <input className={styles.inputButton} type="reset" value="Limpiar" onClick={handleReset} />
+                    </div>
+                </form>
+            </div>
         </>
     )
 }
+
+
+
+
+
