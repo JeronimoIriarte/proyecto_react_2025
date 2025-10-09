@@ -7,21 +7,21 @@ export default function ProductCard({ product, context = 'products', deleteFromC
   const [isModalOpen, setIsModalOpen] = useState(false);
   // estado para el mensaje de confirmación
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const { id, title, price, imageUrl, description, quantity } = product;
+  const { id, title, price, imageUrl, imageAltUrl, description, quantity } = product;
   const { addToCart } = useContext(ShoppingCartContext);
 
   // Funciones para abrir y cerrar el modal
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-    const [currentImage, setCurrentImage] = useState(product.imageUrl);
+    const [currentImage, setCurrentImage] = useState(imageUrl);
     const handleMouseEnter = () => {
-      if (product.imageAltUrl) {
-        setCurrentImage(product.imageAltUrl);
+      if (imageAltUrl) {
+        setCurrentImage(imageAltUrl);
       }
     };
     const handleMouseLeave = () => {
-      setCurrentImage(product.imageUrl);
+      setCurrentImage(imageUrl);
     };
 
     const getNumericPrice = (priceString) => {
@@ -45,11 +45,11 @@ export default function ProductCard({ product, context = 'products', deleteFromC
       {/* La tarjeta del producto */}
       <div className={styles.card}>
         <div className={styles.imageContainer}>
-          <img src={currentImage} alt={product.title} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.cardImage}/>
+          <img src={currentImage} alt={title} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.cardImage}/>
         </div>
         <div className={styles.cardContent}>
-          <h3 className={styles.cardTitle}>{product.title}</h3>
-          <p className={styles.cardPrice}>{product.price}</p>
+          <h3 className={styles.cardTitle}>{title}</h3>
+          <p className={styles.cardPrice}>{price}</p>
           { context === 'products' ? (
             <button onClick={openModal} className={styles.cardButton}>
               Ver detalles
@@ -75,11 +75,11 @@ export default function ProductCard({ product, context = 'products', deleteFromC
           {/* Detiene la propagación del evento para que al hacer clic dentro del modal, no se cierre */}
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={closeModal}>&times;</button>
-            <img src={currentImage} alt={product.title} className={styles.modalImage} />
+            <img src={currentImage} alt={title} className={styles.modalImage} />
             <div className={styles.modalDetails}>
-              <h2>{product.title}</h2>
-              <p className={styles.modalPrice}>{product.price}</p>
-              <p className={styles.modalDescription}>{product.description}</p>
+              <h2>{title}</h2>
+              <p className={styles.modalPrice}>{price}</p>
+              <p className={styles.modalDescription}>{description}</p>
               
               <div className={`${styles.confirmationMessage} ${showConfirmation ? styles.show : ''}`}>
                 ✓ Producto añadido correctamente
