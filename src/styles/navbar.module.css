@@ -67,28 +67,33 @@
   position: relative;
 }
 
-.cartIcon {
-  font-size: 1.8rem;
-  color: var(--text-light);
-  text-decoration: none;
-  position: relative;
-  right: 20px;
+.cartButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.cartIcon:hover {
-  color: #c5cae9;
+.cartButton:hover {
+  transform: scale(1.1);
+  background-color: var(--color-secondary, #ff8c00);
 }
+
 
 .cartImage {
-  height: 32px;
-  width: auto;
+  height: 22px;
+  width: 22px;
 }
 
 /* --- Notificación del Carrito --- */
 .cartItemCount {
   position: absolute;
-  top: -8px;
-  right: -12px;
+  top: -2px;
+  right: -3px;
   background-color: #ff4d4d;
   color: white;
   border-radius: 50%;

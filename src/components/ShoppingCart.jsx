@@ -42,7 +42,7 @@ const ShoppingCart = () => {
                         ))}
                     </div>
                     <div className={styles.cartTotal}>
-                        Total: ${total.toFixed(2)}
+                        Total: ${total}
                     </div>
                 </>
             )}

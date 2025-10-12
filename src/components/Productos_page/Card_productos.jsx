@@ -49,7 +49,7 @@ export default function ProductCard({ product, context = 'products', deleteFromC
         </div>
         <div className={styles.cardContent}>
           <h3 className={styles.cardTitle}>{product.title}</h3>
-          <p className={styles.cardPrice}>{product.price}</p>
+          <p className={styles.cardPrice}>${product.price}</p>
           { context === 'products' ? (
             <button onClick={openModal} className={styles.cardButton}>
               Ver detalles
@@ -78,7 +78,7 @@ export default function ProductCard({ product, context = 'products', deleteFromC
             <img src={currentImage} alt={product.title} className={styles.modalImage} />
             <div className={styles.modalDetails}>
               <h2>{product.title}</h2>
-              <p className={styles.modalPrice}>{product.price}</p>
+              <p className={styles.modalPrice}>${product.price}</p>
               <p className={styles.modalDescription}>{product.description}</p>
               
               <div className={`${styles.confirmationMessage} ${showConfirmation ? styles.show : ''}`}>

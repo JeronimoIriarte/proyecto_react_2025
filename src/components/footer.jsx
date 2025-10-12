@@ -25,7 +25,7 @@ const Footer = () => {
               className={styles.socialIcon}
             >
               <img
-                src="/images/logo_facebook.png"
+                src="/images/icons/logo_facebook.png"
                 alt="logo Facebook"
                 className={styles.socialIcon}
               />
@@ -37,7 +37,7 @@ const Footer = () => {
               className={styles.socialIcon}
             >
               <img
-                src="/images/logo_instagram.png"
+                src="/images/icons/logo_instagram.png"
                 alt="logo Instagram"
                 className={styles.socialIcon}
               />
@@ -49,7 +49,7 @@ const Footer = () => {
               className={styles.socialIcon}
             >
               <img
-                src="/images/logo_twitter.png"
+                src="/images/icons/logo_twitter.png"
                 alt="logo Twitter"
                 className={styles.socialIcon}
               />

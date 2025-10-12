@@ -6,17 +6,20 @@
 
 .buttonSesion {
     padding: 10px 20px;
-    font-size: 15px;
-    background-color: #007bff;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--color-secondary);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .buttonSesion:hover {
-    background-color: #0056b3;
+    background-color: var(--color-secondary-dark);
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .backdrop {
