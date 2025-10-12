@@ -61,6 +61,11 @@
   transition: 0.3s;
 }
 
+.clearButton:disabled {
+  background-color: #e0aeb1;
+  cursor: not-allowed;
+}
+
 .emptyCartMessage {
   text-align: center;
   font-size: 1.2rem;

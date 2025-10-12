@@ -18,13 +18,12 @@ const ShoppingCart = () => {
     const total = cart.reduce((acc, item) => acc + getNumericPrice(item.price) * item.quantity, 0);
 
     return (
-        <>
         <div className={styles.cartContainer}>
             <div className={styles.cartHeader}>
                 <Link href="/productos" className={styles.continueShoppingLink}>
                     &larr; Seguir Comprando
                 </Link>
-                <button onClick={clearCart} className={styles.clearButton}>Limpiar Carrito</button>
+                <button onClick={clearCart} className={styles.clearButton} disabled={cart.length === 0}>Limpiar Carrito</button>
             </div>
 
             <article>
@@ -49,29 +48,6 @@ const ShoppingCart = () => {
                 )}
             </article>
         </div>
-        
-        <article>
-            {cart.length === 0 ? (
-                <p className={styles.emptyCartMessage}>El carrito está vacío.</p>
-            ) : (
-                <>
-                    <div className={productStyles.productGrid}> 
-                        {cart.map((item) => (
-                            <ProductCard 
-                                key={item.id} 
-                                product={item} 
-                                context="cart" 
-                                deleteFromCart={deleteFromCart} 
-                            />
-                        ))}
-                    </div>
-                    <div className={styles.cartTotal}>
-                        Total: ${total}
-                    </div>
-                </>
-            )}
-        </article>
-        </>
   );
 };
 
