@@ -1,5 +1,3 @@
-
-
 .formPage {
     display: flex;
     flex-direction: column;
@@ -38,10 +36,10 @@
     width: 50%;
     border: 1px solid #ccc;
     padding: 16px;
-    margin: 40px ;
+    margin: 40px;
     border-radius: 8px;
     background-color: #f9f9f9;
-}   
+}
 
 .input {
     width: 100%;
@@ -50,7 +48,7 @@
     box-sizing: border-box;
 }
 
-.inputDescription{
+.inputDescription {
     min-width: 100%;
     resize: none;
     height: 5rem;
@@ -96,4 +94,23 @@
 
 .inputButton:hover:nth-child(2) {
     background-color: #3366ff;
+}
+
+.radioGroup {
+    margin: 15px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.radioGroup label {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.radioGroup input[type="radio"] {
+    accent-color: #007bff;
 }

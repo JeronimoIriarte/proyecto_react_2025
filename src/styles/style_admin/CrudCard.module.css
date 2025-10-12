@@ -43,6 +43,10 @@
   font-weight: 600;
   margin: 0 0 0.5rem 0;
   color: #333;
+  word-wrap: break-word;
+  /* Ajusta palabras largas */
+  overflow-wrap: break-word;
+  /* Alternativa moderna */
 }
 
 .cardPrice {
@@ -50,6 +54,10 @@
   font-weight: 700;
   color: var(--color-secondary);
   margin: 0 0 1rem 0;
+  word-wrap: break-word;
+  /* Ajusta palabras largas */
+  overflow-wrap: break-word;
+  /* Alternativa moderna */
 }
 
 .buttonsContainer {
@@ -69,17 +77,19 @@
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
-.cardButton:nth-child(2){
+
+.cardButton:nth-child(2) {
   background-color: #ffa500;
 }
 
-.cardButton:nth-child(3){
+.cardButton:nth-child(3) {
   background-color: #ff0000;
 }
 
 .cardButton:hover {
   background-color: #0056b3;
 }
+
 .cardButton:nth-child(2):hover {
   background-color: #cc8400;
 }
@@ -115,8 +125,15 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .closeButton {
@@ -133,17 +150,24 @@
 .modalImage {
   width: 50%;
   border-radius: 8px;
-  object-fit: cover;
+  object-fit:contain;
 }
 
 .modalDetails {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+
 }
 
 .modalDetails h2 {
   margin-top: 0;
   margin-bottom: 1rem;
+  word-wrap: break-word;
+  /* Ajusta palabras largas */
+  overflow-wrap: break-word;
+  /* Alternativa moderna */
 }
 
 .modalPrice {
@@ -151,11 +175,19 @@
   font-weight: bold;
   color: var(--color-secondary);
   margin-bottom: 1rem;
+  word-wrap: break-word;
+  /* Ajusta palabras largas */
+  overflow-wrap: break-word;
+  /* Alternativa moderna */
 }
 
 .modalDescription {
   flex-grow: 1;
   color: #555;
+  word-wrap: break-word;
+  /* Ajusta palabras largas */
+  overflow-wrap: break-word;
+  /* Alternativa moderna */
 }
 
 .deleteButton {
@@ -182,6 +214,7 @@
     max-height: 80vh;
     overflow-y: auto;
   }
+
   .modalImage {
     width: 100%;
     max-height: 250px;

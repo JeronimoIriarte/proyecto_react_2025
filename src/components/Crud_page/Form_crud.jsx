@@ -11,7 +11,9 @@ const initialForm = {
     price: '',
     imageUrl: '',
     imageAltUrl: '',
-    description: ''
+    description: '',
+    category: '',
+    onSale: false,
 };
 
 export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
@@ -48,7 +50,7 @@ export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
                 const imageUrl = response.data.secure_url;
                 setFormData((prevFormData) => ({
                     ...prevFormData,
-                    [type]: imageUrl, 
+                    [type]: imageUrl,
                 }));
 
             } catch (error) {
@@ -60,7 +62,7 @@ export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (!formData.title || !formData.price || !formData.description || !formData.imageUrl || !formData.imageAltUrl) {
+        if (!formData.title || !formData.price || !formData.description || !formData.imageUrl || !formData.imageAltUrl || !formData.category) {
             alert("Datos incompletos");
             return;
         }
@@ -93,7 +95,38 @@ export const Form_crud = ({ createProduct, updateProduct, dataToEdit }) => {
                     {formData.imageAltUrl && <img src={formData.imageAltUrl} alt="Vista previa" width="200" />}
 
                     <textarea className={`${styles.input} ${styles.inputDescription}`} name='description' onChange={handleChange} value={formData.description} placeholder='Descripcion del producto'></textarea>
-
+                    <select className={styles.input} name='category' onChange={handleChange} value={formData.category}>
+                        <option value={null}>Seleccione una categoria</option>
+                        <option value="seleccion_arg">Seleccion Argentina</option>
+                        <option value="boca">Boca Juniors</option>
+                        <option value="river">River Plate</option>
+                        <option value="independiente">Independiente</option>
+                        <option value="racing">Racing Club</option>
+                        <option value="san_lorenzo">San Lorenzo</option>
+                        <option value="importadas">Importadas</option>
+                    </select>
+                    <div className={styles.radioGroup}>
+                        <label>
+                            <input
+                                type="radio"
+                                name="onSale"
+                                value="true"
+                                checked={formData.onSale === true}
+                                onChange={(e) => setFormData({ ...formData, onSale: e.target.value === "true" })}
+                            />
+                            En oferta
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                name="onSale"
+                                value="false"
+                                checked={formData.onSale === false}
+                                onChange={(e) => setFormData({ ...formData, onSale: e.target.value === "true" })}
+                            />
+                            No en oferta
+                        </label>
+                    </div>
                     <div className={styles.buttonContainer}>
                         <input className={styles.inputButton} type="submit" value="Enviar" onClick={handleSubmit} />
                         <input className={styles.inputButton} type="reset" value="Limpiar" onClick={handleReset} />

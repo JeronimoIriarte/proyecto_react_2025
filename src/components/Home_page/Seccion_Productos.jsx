@@ -6,36 +6,13 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import styles from '../../styles/style_index/SeccionProductos.module.css';
 import Card from './Card';
+import { products } from '../../data/products';
 
 
 export default function SeccionProductos() {
   // Datos de ejemplo de las camisetas
-  const productos = [
-    {
-      id: 1,
-      title: "Camiseta Seleccion Argentina",
-      price: "$5000",
-      image: "/images/camisetaarg.jpg",
-    },
-    {
-      id: 2,
-      title: "Camiseta Rosario Central",
-      price: "$5200",
-      image: "/images/camisetacentral.jpg",
-    },
-    {
-      id: 3,
-      title: "Camiseta Retro Lanus",
-      price: "$4800",
-      image: "/images/camisetalanus.jpg",
-    },
-    {
-      id: 4,
-      title: "Camiseta Seleccion Argentina Retro",
-      price: "$5000",
-      image: "/images/retroarg.jpg",
-    },
-  ];
+
+  const productosEnOferta = products.filter((producto) => producto.onSale === true);
 
   return (
     <>
@@ -59,7 +36,7 @@ export default function SeccionProductos() {
             },
           }}
         >
-          {productos.map((src, pepe) => (
+          {productosEnOferta.map((src, pepe) => (
             <SwiperSlide key={pepe}>
               <div className={styles.card}>
                 <Card key={pepe} productos={src} />
