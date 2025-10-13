@@ -11,6 +11,7 @@ export default function Home() {
     <>
       <Head>
         <Metatags />
+        <title>Panozzo Indumentaria</title>
       </Head>
         <div>
           <header>

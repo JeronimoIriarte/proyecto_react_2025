@@ -1,6 +1,49 @@
-.contenedor_productos {
+
+.contenedorDeProductos {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.productGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
-    background-color: #f0f0f0;
+    margin-right: 3rem;
+    margin-left: 3rem;
+}
+
+.filtro {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.filtroBotones button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+    transition: background-color 0.3s ease;
+}
+
+.filtroBotones button:hover {
+    background-color: #0056b3;
 }
