@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { ShoppingCartContext } from '@/pages/carrito/ShoppingCartContextProvider';
 import styles from '../../styles/style_productos/Card_productos.module.css';
 
-export default function ProductCard({ product, context = 'products', deleteFromCart }) {
+export default function Card_productos({ product, context = 'products', deleteFromCart }) {
   // Estado para controlar la visibilidad del modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   // estado para el mensaje de confirmación
@@ -92,7 +92,14 @@ export default function ProductCard({ product, context = 'products', deleteFromC
               >
                 {showConfirmation ? '¡Agregado!' : 'Agregar al carrito'}
               </button>
-              
+              <select className={styles.sizeSelect}>
+                <option value="" disabled selected>Seleccione una talla</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
             </div>
           </div>
         </div>

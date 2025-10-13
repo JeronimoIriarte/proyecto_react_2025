@@ -72,13 +72,8 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/nosotros" className={styles.link}>
+              <a href="/sobreNosotros" className={styles.link}>
                 Nosotros
-              </a>
-            </li>
-            <li>
-              <a href="/contacto" className={styles.link}>
-                Contacto
               </a>
             </li>
           </ul>

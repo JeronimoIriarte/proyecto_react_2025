@@ -17,7 +17,7 @@ function Login() {
         if (input.text === "admin" && input.password === "123456") {
             setMessage("Acceso concedido. Redirigiendo a panel de control...");
             setTimeout(() => {
-                router.push("/panelDeControl"); // Redirigir a panelDeControl
+                router.push("/panelDeControl");
             }, 1000);
         } else {
             setMessage("Acceso denegado. Redirigiendo a productos...");

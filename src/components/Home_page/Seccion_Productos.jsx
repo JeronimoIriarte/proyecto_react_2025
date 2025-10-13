@@ -45,9 +45,6 @@ export default function SeccionProductos() {
           ))}
         </Swiper>
       </section>
-      <style jsx>{`
-
-    `}</style>
     </>
   );
 };

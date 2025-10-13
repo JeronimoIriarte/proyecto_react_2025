@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import cloudinaryConfig from "../../pages/cloudinaryConfig";
-import styles from '../../styles/style_admin/CrudForm.module.css'
+import styles from '@/styles/style_PanelDeControl/CrudForm.module.css'
 
 const initialForm = {
     id: null,

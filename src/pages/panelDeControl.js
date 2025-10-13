@@ -8,31 +8,38 @@ import styles from '../styles/style_PanelDeControl/panelDeControl.module.css';
 
 export const Crud = () => {
 
+    const products = productsData.products;
+
     const [db, setdb] = useState(productsData.products);
     const [dataToEdit, setDataToEdit] = useState(null);
 
-    const products = productsData.products;
-    const [productos] = useState(products); // Todos los productos
-    const [filteredProducts, setFilteredProducts] = useState(productos); // Productos a mostrar
-    const [filter, setFilter] = useState("All"); // Filtro actual
+    const [productos] = useState(products);
+    const [filteredProducts, setFilteredProducts] = useState(productos);
+    const [filter, setFilter] = useState("All");
+
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleFilterChange = (category) => {
-        setFilter(category);
-        if (category === "All") {
-            setFilteredProducts(products);
-            return;
-        }
-        if (category === "Ofertas") {
-            const ofertas = products.filter(
-                (product) => product.onSale === true
-            );
-            setFilteredProducts(ofertas);
-        } else {
-            const filtered = products.filter(
-                (product) => product.category === category
-            );
-            setFilteredProducts(filtered);
-        }
+        setIsLoading(true);
+        setTimeout(() => {
+            setFilter(category);
+            if (category === "All") {
+                setFilteredProducts(products);
+                return setIsLoading(false);
+            }
+            if (category === "Ofertas") {
+                const ofertas = products.filter(
+                    (product) => product.onSale === true
+                );
+                setFilteredProducts(ofertas);
+            } else {
+                const filtered = products.filter(
+                    (product) => product.category === category
+                );
+                setFilteredProducts(filtered);
+            }
+            setIsLoading(false); // Desactiva el estado de carga después de 1.5 segundos
+        }, 500);
     };
 
     const readDb = async () => {
@@ -142,9 +149,21 @@ export const Crud = () => {
                     </div>
                 </div>
                 <div className={styles.productGrid}>
-                    {filteredProducts.map((product) => (
-                        <ProductCard key={product.id} product={product} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} />
-                    ))}
+                    {isLoading ? (
+                        <div className={styles.loadingContainer}>
+                            <img
+                                src="/gifs/loading.gif" // Ruta del GIF de cargando
+                                alt="Cargando..."
+                                className={styles.loadingGif}
+                            />
+                        </div>
+                    ) : (
+
+                        filteredProducts.map((product) => (
+                            <ProductCard key={product.id} product={product} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} />
+                        ))
+
+                    )}
                 </div>
             </div>
         </>

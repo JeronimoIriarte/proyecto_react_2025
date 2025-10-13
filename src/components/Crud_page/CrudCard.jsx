@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../styles/style_admin/CrudCard.module.css';
+import styles from "@/styles/style_PanelDeControl/CrudCard.module.css";
 
 export default function CrudCard({ product, deleteProduct, setDataToEdit }) {
     

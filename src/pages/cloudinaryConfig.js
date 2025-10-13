@@ -7,7 +7,3 @@ const cloudinaryConfig = {
 
 export default cloudinaryConfig;
 
-
-// API KEY : 659441137459716
-// API SECRET : SjyupL8iJKJSvGljO20vu65bWmQ
-// CLOUD NAME : danoxr2s5

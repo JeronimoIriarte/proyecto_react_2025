@@ -3,6 +3,7 @@ import { useState } from "react";
 import ProductCard from "@/components/Productos_page/Card_productos";
 import productsData from "../../data/products.json";
 import styles from '../../styles/style_productos/Productos.module.css';
+import Card_productos from '@/components/Productos_page/Card_productos';
 
 
 const Main_Productos = () => {
@@ -11,24 +12,29 @@ const Main_Productos = () => {
     const [productos] = useState(products); // Todos los productos
     const [filteredProducts, setFilteredProducts] = useState(productos); // Productos a mostrar
     const [filter, setFilter] = useState("All"); // Filtro actual
+    const [isLoading, setIsLoading] = useState(false); // Estado de carga
 
     const handleFilterChange = (category) => {
-        setFilter(category);
-        if (category === "All") {
-            setFilteredProducts(products);
-            return;
-        }
-        if (category === "Ofertas") {
-            const ofertas = products.filter(
-                (product) => product.onSale === true
-            );
-            setFilteredProducts(ofertas);
-        } else {
-            const filtered = products.filter(
-                (product) => product.category === category
-            );
-            setFilteredProducts(filtered);
-        }
+        setIsLoading(true);
+        setTimeout(() => {
+            setFilter(category);
+            if (category === "All") {
+                setFilteredProducts(products);
+                return setIsLoading(false);
+            }
+            if (category === "Ofertas") {
+                const ofertas = products.filter(
+                    (product) => product.onSale === true
+                );
+                setFilteredProducts(ofertas);
+            } else {
+                const filtered = products.filter(
+                    (product) => product.category === category
+                );
+                setFilteredProducts(filtered);
+            }
+            setIsLoading(false); // Desactiva el estado de carga después de 1.5 segundos
+        }, 500);
     };
 
     return (
@@ -74,9 +80,19 @@ const Main_Productos = () => {
                         </div>
                     </div>
                     <div className={styles.productGrid}>
-                        {filteredProducts.map((producto) => (
-                            <ProductCard key={producto.id} product={producto} />
-                        ))}
+                        {isLoading ? (
+                            <div className={styles.loadingContainer}>
+                                <img
+                                    src="/gifs/loading.gif" // Ruta del GIF de cargando
+                                    alt="Cargando..."
+                                    className={styles.loadingGif}
+                                />
+                            </div>
+                        ) : (
+                            filteredProducts.map((producto) => (
+                                <Card_productos key={producto.id} product={producto} />
+                            ))
+                        )}
                     </div>
                 </div>
             </main>
