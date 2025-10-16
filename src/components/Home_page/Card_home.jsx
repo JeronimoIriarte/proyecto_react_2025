@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import styles from "../../styles/style_index/Card.module.css";
+import styles from "@/styles/style_home/Card_home.module.css";
 
 const Tarjeta = (props) => {
 

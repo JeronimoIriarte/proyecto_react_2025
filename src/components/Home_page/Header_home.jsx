@@ -1,6 +1,6 @@
-import styles from "../../styles/style_index/Home.module.css";
+import styles from "@/styles/style_home/Header_home.module.css";
 import Link from "next/link";
-import Login from '../Home_page/Login';
+import Login from './Login_home';
 
 export default function SeccionPrincipal() {
   return (

@@ -1,7 +1,7 @@
 import { ShoppingCartContext } from "@/pages/carrito/ShoppingCartContextProvider";
 import { useContext } from "react";
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/navbar.module.css';
+import styles from '@/styles/navbar.module.css';
 import Link from 'next/link';
 
 export default function Navbar() {

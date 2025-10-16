@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState } from "react";
-import ProductCard from "@/components/Productos_page/Card_productos";
-import productsData from "../../data/products.json";
-import styles from '../../styles/style_productos/Productos.module.css';
+import productsData from "@/data/products.json";
+import styles from '@/styles/style_productos/GrillaDeProductos_productos.module.css';
 import Card_productos from '@/components/Productos_page/Card_productos';
 
 

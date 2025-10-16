@@ -4,8 +4,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
-import styles from '../../styles/style_index/SeccionProductos.module.css';
-import Card from './Card';
+import styles from '@/styles/style_home/Productos_home.module.css';
+import Card from './Card_home';
 import { products } from '../../data/products';
 
 

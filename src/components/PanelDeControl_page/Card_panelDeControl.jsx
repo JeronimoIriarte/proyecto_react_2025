@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import styles from "@/styles/style_PanelDeControl/CrudCard.module.css";
+import styles from "@/styles/style_PanelDeControl/Card_panelDeControl.module.css";
 
-export default function CrudCard({ product, deleteProduct, setDataToEdit }) {
+export default function Card_panelDeControl({ product, deleteProduct, setDataToEdit }) {
     
-    const { id, title, price, imageUrl, imageAltUrl, description } = product;
+    const { title, price, imageUrl, imageAltUrl, description } = product;
     
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState(imageUrl);

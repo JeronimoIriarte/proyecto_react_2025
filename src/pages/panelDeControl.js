@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ProductCard from '@/components/Crud_page/CrudCard';
 import productsData from "../data/products.json";
-import { Form_crud } from '@/components/Crud_page/Form_crud';
+import { Form_panelDeControl } from '@/components/PanelDeControl_page/Form_panelDeControl';
+import Productos_panelDeControl from '@/components/PanelDeControl_page/Productos_panelDeControl';
 import axios from 'axios';
-import styles from '../styles/style_PanelDeControl/panelDeControl.module.css';
+
 
 
 export const Crud = () => {
@@ -112,60 +112,10 @@ export const Crud = () => {
 
     return (
         <>
-            <Form_crud createProduct={createProduct} updateProduct={updateProduct} setDataToEdit={setDataToEdit} dataToEdit={dataToEdit} />
+            <Form_panelDeControl createProduct={createProduct} updateProduct={updateProduct} setDataToEdit={setDataToEdit} dataToEdit={dataToEdit} />
             <title>Panel de Control</title>
             <favicon rel="icon" href="public\images\logo_head.png" />
-            <div className={styles.contenedorDeProductos}>
-                <div className={styles.filtro}>
-                    <h3>Filtro de camisetas</h3>
-                    <div className={styles.filtroBotones}>
-                        <button onClick={() => handleFilterChange("All")}>
-                            Todos
-                        </button>
-                        <button onClick={() => handleFilterChange("Ofertas")}>
-                            Ofertas
-                        </button>
-                        <button onClick={() => handleFilterChange("seleccion_arg")}>
-                            Selección Argentina
-                        </button>
-                        <button onClick={() => handleFilterChange("boca")}>
-                            Boca Juniors
-                        </button>
-                        <button onClick={() => handleFilterChange("river")}>
-                            River Plate
-                        </button>
-                        <button onClick={() => handleFilterChange("racing")}>
-                            Racing Club
-                        </button>
-                        <button onClick={() => handleFilterChange("independiente")}>
-                            Independiente
-                        </button>
-                        <button onClick={() => handleFilterChange("san_lorenzo")}>
-                            San Lorenzo
-                        </button>
-                        <button onClick={() => handleFilterChange("importadas")}>
-                            Importadas
-                        </button>
-                    </div>
-                </div>
-                <div className={styles.productGrid}>
-                    {isLoading ? (
-                        <div className={styles.loadingContainer}>
-                            <img
-                                src="/gifs/loading.gif" // Ruta del GIF de cargando
-                                alt="Cargando..."
-                                className={styles.loadingGif}
-                            />
-                        </div>
-                    ) : (
-
-                        filteredProducts.map((product) => (
-                            <ProductCard key={product.id} product={product} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} />
-                        ))
-
-                    )}
-                </div>
-            </div>
+            <Productos_panelDeControl handleFilterChange={handleFilterChange} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} filteredProducts={filteredProducts} isLoading={isLoading}/>
         </>
     )
 }

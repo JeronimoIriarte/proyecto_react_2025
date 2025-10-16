@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import styles from "../../styles/style_index/Login.module.css";
+import styles from "@/styles/style_home/Login_home.module.css";
 
 function Login() {
     const [input, setInput] = useState({ text: "", password: "" });

@@ -1,16 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { ShoppingCartContext } from '@/pages/carrito/ShoppingCartContextProvider';
-import styles from '../../styles/style_productos/Card_productos.module.css';
+import styles from '@/styles/style_productos/Card_productos.module.css';
 
 export default function Card_productos({ product, context = 'products', deleteFromCart }) {
-  // Estado para controlar la visibilidad del modal
+
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // estado para el mensaje de confirmación
   const [showConfirmation, setShowConfirmation] = useState(false);
   const { id, title, price, imageUrl, imageAltUrl, description, quantity } = product;
   const { addToCart } = useContext(ShoppingCartContext);
 
-  // Funciones para abrir y cerrar el modal
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
@@ -31,7 +29,6 @@ export default function Card_productos({ product, context = 'products', deleteFr
     
     const numericPrice = getNumericPrice(price);
 
-    // función para manejar la adición al carrito
     const handleAddToCart = (productId) => {
       addToCart(productId);
       setShowConfirmation(true);
@@ -42,7 +39,6 @@ export default function Card_productos({ product, context = 'products', deleteFr
 
   return (
     <>
-      {/* La tarjeta del producto */}
       <div className={styles.card}>
         <div className={styles.imageContainer}>
           <img src={currentImage} alt={title} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.cardImage}/>
@@ -69,10 +65,8 @@ export default function Card_productos({ product, context = 'products', deleteFr
         </div>
       </div>
 
-      {/* Modal (solo se muestra si isModalOpen es true y estamos en la página de productos) */}
       {context === 'products' && isModalOpen && (
         <div className={styles.modalBackdrop} onClick={closeModal}>
-          {/* Detiene la propagación del evento para que al hacer clic dentro del modal, no se cierre */}
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button className={styles.closeButton} onClick={closeModal}>&times;</button>
             <img src={currentImage} alt={title} className={styles.modalImage} />

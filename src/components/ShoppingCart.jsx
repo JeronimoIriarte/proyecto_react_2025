@@ -1,9 +1,9 @@
 import { ShoppingCartContext } from "@/pages/carrito/ShoppingCartContextProvider";
 import { useContext } from "react";
-import ProductCard from "./Productos_page/Card_productos";
+import ProductCard from "@/components/Productos_page/Card_productos";
 import Link from "next/link";
-import styles from '../styles/style_Productos/ShoppingCart.module.css';
-import productStyles from '../styles/style_productos/Productos.module.css'; // <-- 1. Importa los estilos de la grilla
+import styles from '@/styles/style_Productos/ShoppingCart.module.css';
+import productStyles from '@/styles/style_productos/Productos.module.css';
 
 const ShoppingCart = () => {
 
@@ -48,7 +48,7 @@ const ShoppingCart = () => {
                 )}
             </article>
         </div>
-  );
+    );
 };
 
 export default ShoppingCart;
