@@ -31,7 +31,7 @@ export default function Card_panelDeControl({ product, deleteProduct, setDataToE
                 </div>
                 <div className={styles.cardContent}>
                     <h3 className={styles.cardTitle}>{title}</h3>
-                    <p className={styles.cardPrice}>${price}</p>
+                    <p className={styles.cardPrice}>${price.toLocaleString("es-ES")}</p>
                     <div className={styles.buttonsContainer}>
                         <button onClick={openModal} className={styles.cardButton}>
                             Ver detalles
@@ -55,7 +55,7 @@ export default function Card_panelDeControl({ product, deleteProduct, setDataToE
                         <img src={imageUrl} alt={title} className={styles.modalImage} />
                         <div className={styles.modalDetails}>
                             <h2>{title}</h2>
-                            <p className={styles.modalPrice}>${price}</p>
+                            <p className={styles.modalPrice}>${price.toLocaleString("es-ES")}</p>
                             <p className={styles.modalDescription}>{description}</p>
                             <button className={styles.deleteButton} onClick={() => deleteProduct(product)}>ELIMINAR PRODUCTO</button>
                         </div>

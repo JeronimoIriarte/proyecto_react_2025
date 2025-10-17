@@ -22,7 +22,7 @@ const Tarjeta = (props) => {
                 <img src={currentImage} alt={id} className={styles.image} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
                 <div className={styles.image_content}>
                     <h3>{title}</h3>
-                    <p>${price}</p>
+                    <p>${price.toLocaleString("es-ES")}</p>
                     <Link href="/productos" className={styles.boton}>Ver Ofertas</Link>
                 </div>
             </div>

@@ -9,6 +9,7 @@ export const ShoppingCartContext = createContext();
 const ShoppingCartContextProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(shoppingCartReducer, shoppingCartInitialState);
+    
 
     const addToCart = (id) => dispatch({ type: TYPES.ADD_TO_CART, payload: id });
     const deleteFromCart = (id, all = false) => {

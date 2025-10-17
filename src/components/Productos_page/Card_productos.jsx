@@ -45,7 +45,7 @@ export default function Card_productos({ product, context = 'products', deleteFr
         </div>
         <div className={styles.cardContent}>
           <h3 className={styles.cardTitle}>{product.title}</h3>
-          <p className={styles.cardPrice}>${product.price}</p>
+          <p className={styles.cardPrice}>${product.price.toLocaleString("es-ES")}</p>
           { context === 'products' ? (
             <button onClick={openModal} className={styles.cardButton}>
               Ver detalles
@@ -53,7 +53,7 @@ export default function Card_productos({ product, context = 'products', deleteFr
           ) : (
             <div className={styles.cartItemControls}>
                 <p>Cantidad: {quantity}</p>
-                <p>Subtotal: ${numericPrice * quantity}</p>
+                <p>Subtotal: ${(numericPrice * quantity).toLocaleString("es-ES")}</p>
                 <button onClick={() => deleteFromCart(id)} className={styles.cardButton}>
                     Eliminar Uno
                 </button>
@@ -72,8 +72,8 @@ export default function Card_productos({ product, context = 'products', deleteFr
             <img src={currentImage} alt={title} className={styles.modalImage} />
             <div className={styles.modalDetails}>
               <h2>{product.title}</h2>
-              <p className={styles.modalPrice}>${product.price}</p>
-              <p className={styles.modalDescription}>{product.description}</p>
+              <p className={styles.modalPrice}>${price}</p>
+              <p className={styles.modalDescription}>{description}</p>
               
               <div className={`${styles.confirmationMessage} ${showConfirmation ? styles.show : ''}`}>
                 ✓ Producto añadido correctamente

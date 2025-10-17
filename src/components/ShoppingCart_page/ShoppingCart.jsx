@@ -2,13 +2,14 @@ import { ShoppingCartContext } from "@/pages/carrito/ShoppingCartContextProvider
 import { useContext } from "react";
 import ProductCard from "@/components/Productos_page/Card_productos";
 import Link from "next/link";
-import styles from '@/styles/style_Productos/ShoppingCart.module.css';
-import productStyles from '@/styles/style_productos/Productos.module.css';
+import styles from '@/styles/style_productos/ShoppingCart_productos.module.css';
+import productStyles from '@/styles/style_productos/GrillaDeProductos_productos.module.css';
 
 const ShoppingCart = () => {
 
     const { state, deleteFromCart, clearCart } = useContext(ShoppingCartContext);
     const { cart } = state;
+
 
     const getNumericPrice = (priceString) => {
         if (typeof priceString !== 'string') return 0;
@@ -16,6 +17,7 @@ const ShoppingCart = () => {
     }
 
     const total = cart.reduce((acc, item) => acc + getNumericPrice(item.price) * item.quantity, 0);
+
 
     return (
         <div className={styles.cartContainer}>
@@ -42,7 +44,7 @@ const ShoppingCart = () => {
                             ))}
                         </div>
                         <div className={styles.cartTotal}>
-                            Total: ${total.toFixed(2)}
+                            Total: ${total.toLocaleString("es-ES")}
                         </div>
                     </>
                 )}

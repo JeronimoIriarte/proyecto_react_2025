@@ -4,21 +4,29 @@ import styles from "@/styles/style_home/Testimonios_home.module.css";
 const testimonio = [
     {
         id: 1,
-        name: "Jero",
+        name: "Matias",
         estrellas: 5,
-        comentario: "Las camisetas no se, pero la pagina 10/10"
+        comentario: "La calidad de la tela es excelente y el diseño es justo como lo vi en la web. Súper cómoda. ¡Muy recomendable!"
+        
+        
     },
     {
         id: 2,
-        name: "jhony",
+        name: "Lucas",
         estrellas: 5,
-        comentario: "El crud quedo epico"
+        comentario: "Material de primera. Incluso después de lavarla varias veces, el color sigue vivo y no se deforma. ¡Mi nueva favorita!"
     },
     {
         id: 3,
-        name: "Franco's",
+        name: "Nicolas",
         estrellas: 5,
-        comentario: "Traigan camisteas con el logo de React y JS"
+        comentario: "El ajuste es tal cual la tabla de tallas. Queda perfecta, ni muy holgada ni muy ajustada. Muy contento con la compra."
+    },
+    {
+        id: 4,
+        name: "Sofia",
+        estrellas: 5,
+        comentario: "Recibí mi camiseta en tiempo y forma. El embalaje fue cuidado y la atención al cliente fue excelente. ¡Volveré a comprar!"
     },
 ];
 
@@ -33,7 +41,7 @@ export default function SeccionComentarios() {
     return (
         <section className={styles.sectionAbout}>
             <div className={styles.containerTestimonios}>
-                <h3 className={styles.tituloTestimonios}>Nuestros Clientes</h3>
+                <h3 className={styles.tituloTestimonios}>Nuestros Clientes</h3>               
                 <div className={styles.gridTestimonios}>
                     {testimonio.map((item) => (
                         <div key={item.id} className={styles.tarjetaTestimonio}>
