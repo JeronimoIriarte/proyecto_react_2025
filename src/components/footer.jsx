@@ -83,9 +83,9 @@ const Footer = () => {
         <div className={styles.contactSection}>
           <h2 className={styles.sectionTitle}>Información de Contacto</h2>
           <p className={styles.contactItem}>+1 (555) 123-4567</p>
-          <p className={styles.contactItem}>contacto@miapp.com</p>
-          <p className={styles.contactItem}>123 Calle Principal</p>
-          <p className={styles.contactItem}>Ciudad, Estado 12345</p>
+          <p className={styles.contactItem}>panozzoindumentaria@contacto.com</p>
+          <p className={styles.contactItem}>Avenida Viamonte 1384</p>
+          <p className={styles.contactItem}>Cdad. Autónoma de Buenos Aires, Argentina</p>
         </div>
       </div>
 

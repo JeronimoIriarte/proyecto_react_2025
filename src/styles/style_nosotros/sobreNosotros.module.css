@@ -1,0 +1,221 @@
+/* --- Estilos del Hero --- */
+.hero {
+  position: relative;
+  height: 55vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-image: url('/images/hero_nosotros.jpg'); 
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  z-index: 1;
+  margin: 0;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  z-index: 1;
+  margin-top: 0.5rem;
+}
+
+
+/* --- Secciones de Contenido (Misión y Local) --- */
+.contentSection {
+  padding: 5rem 2rem;
+}
+
+.altBackground {
+  background-color: #f8f8f8;
+}
+
+.contentContainer {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+
+.reverseContainer {
+  flex-direction: row-reverse;
+}
+
+.textContent, .imageContent {
+  flex: 1;
+}
+
+.textContent {
+  text-align: left;
+}
+
+.textContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.textContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.address {
+  font-weight: 500;
+  margin-top: 1.5rem;
+  color: #333;
+}
+
+.imageContent img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Sección del Equipo --- */
+.teamSection {
+  padding: 5rem 2rem;
+  background-color: #fff;
+}
+
+.teamTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teamMemberCard {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teamMemberCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.teamMemberImage {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 4px solid var(--color-secondary, #ff8c00);
+}
+
+.teamMemberName {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.teamMemberRole {
+  font-size: 1rem;
+  color: var(--color-secondary, #ff8c00);
+  margin: 0.5rem 0 1rem 0;
+  font-weight: bold;
+}
+
+.teamMemberBio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+
+
+/* ---  Clases para Animación de Entrada --- */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* --- Sección de Ubicación --- */
+.locationSection {
+  padding: 5rem 2rem;
+  background-color: #f8f8f8;
+  border-top: 1px solid #eaeaea;
+}
+
+.locationTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.mapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding-top: 35%;
+}
+
+.mapContainer > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column; 
+  }
+
+  .reverseContainer {
+    flex-direction: column;
+  } 
+
+  .textContent {
+    text-align: center;
+  }
+}

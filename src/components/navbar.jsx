@@ -36,7 +36,9 @@ export default function Navbar() {
                     <ul className={styles.navbarMenu}>
                         <li><Link href="/" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Inicio</Link></li>
                         <li><Link href="/productos" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Productos</Link></li>
+                        <li><Link href="/sobreNosotros" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Sobre Nosotros</Link></li>
                         <li><Link href="#footer" className={`${styles.navLink} ${isScrolled ? styles.navlinkScrolled : ''} `}>Contacto</Link></li>
+
                     </ul>
                     <div className={styles.navbarCart}>
                         <Link href="/carrito/cart" className={styles.cartButton}>
