@@ -67,7 +67,7 @@
 
 .productGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
   gap: 2rem;
   margin-right: 3rem;
   margin-left: 3rem;
@@ -118,4 +118,38 @@
 
 .filtroBotones button:hover {
   background-color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+    max-width: 90%;
+  }
+
+  .contenedorDeProductos {
+    grid-template-columns: 1fr;
+    margin: 0 1rem;
+  }
+
+  .filtro {
+    position: static;
+    margin: 1rem 0;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filtroBotones button {
+    font-size: 14px;
+    margin: 0.3rem;
+  }
 }

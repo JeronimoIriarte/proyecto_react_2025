@@ -21,11 +21,11 @@ export default function SeccionProductos() {
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={20}
-          slidesPerView={2} // Muestra 3 imágenes a la vez
+          slidesPerView={1} // Muestra 3 imágenes a la vez
           navigation // Habilita las flechas de navegación
           pagination={{ clickable: true }} // Habilita los puntos de paginación
           breakpoints={{
-            470: {
+            600: {
               slidesPerView: 1, // 1 imagen en pantallas pequeñas
             },
             790: {

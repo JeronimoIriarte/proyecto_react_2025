@@ -42,6 +42,11 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.image_content .boton {
+    align-self: center;
 }
 
 .image_content h3 {
@@ -65,4 +70,23 @@
 .boton:hover {
     background-color: var(--color-primary);
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .card {
+        min-width: 250px;
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+        margin-right: 0;
+    }
+
+    .boton {
+        text-align: center;
+        width: 80%;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }
