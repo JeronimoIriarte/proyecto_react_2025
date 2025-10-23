@@ -28,6 +28,18 @@ const testimonio = [
         estrellas: 5,
         comentario: "Recibí mi camiseta en tiempo y forma. El embalaje fue cuidado y la atención al cliente fue excelente. ¡Volveré a comprar!"
     },
+    {
+        id: 5,
+        name: "Romina",
+        estrellas: 5,
+        comentario: "El envio fue muy rapido, muy buena atencion al cliente"
+    },
+    {
+        id: 6,
+        name: "Sebastian",
+        estrellas: 5,
+        comentario: "Gran variedad de equipos y de camisetas 100% recomendada"
+    }
 ];
 
 const renderEstrellas = (estrellas) => {
