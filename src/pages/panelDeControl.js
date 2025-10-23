@@ -3,6 +3,7 @@ import productsData from "../data/products.json";
 import { Form_panelDeControl } from '@/components/PanelDeControl_page/Form_panelDeControl';
 import Productos_panelDeControl from '@/components/PanelDeControl_page/Productos_panelDeControl';
 import axios from 'axios';
+import Metatags from '@/components/Metatags';
 
 
 
@@ -112,10 +113,10 @@ export const Crud = () => {
 
     return (
         <>
-            <Form_panelDeControl createProduct={createProduct} updateProduct={updateProduct} setDataToEdit={setDataToEdit} dataToEdit={dataToEdit} />
+            <Metatags />
             <title>Panel de Control</title>
-            <favicon rel="icon" href="public\images\logo_head.png" />
-            <Productos_panelDeControl handleFilterChange={handleFilterChange} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} filteredProducts={filteredProducts} isLoading={isLoading}/>
+            <Form_panelDeControl createProduct={createProduct} updateProduct={updateProduct} setDataToEdit={setDataToEdit} dataToEdit={dataToEdit} />
+            <Productos_panelDeControl handleFilterChange={handleFilterChange} deleteProduct={deleteProduct} setDataToEdit={setDataToEdit} filteredProducts={filteredProducts} isLoading={isLoading} />
         </>
     )
 }

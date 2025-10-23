@@ -118,10 +118,32 @@
 @media (max-width: 768px) {
     .formPage {
         width: 100%;
-        margin: 20px;
+        margin-top: 3rem;
+    }
+
+    .inicioButton {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .titulo {
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+    
+    .form {
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .input {
+        width: 100%;
     }
 
     .inputButton {
-        width: 40%;
+        width: 30%;
     }
 }

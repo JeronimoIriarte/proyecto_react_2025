@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import SeccionPrincipal from "@/components/Home_page/Header_home";
 import SeccionProductos from "@/components/Home_page/Productos_home";
 import SeccionComentarios from "@/components/Home_page/Comentarios_home";
-import Metatags from "@/components/Home_page/Metatags_home";
+import Metatags from "@/components/Metatags";
 
 export default function Home() {
   return (
