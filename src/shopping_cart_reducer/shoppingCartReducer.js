@@ -2,6 +2,12 @@ import { TYPES } from "@/shopping_cart_reducer/shoppingCartActions";
 
 export const shoppingCartReducer = (state, action) => {
     switch (action.type) {
+        case TYPES.LOAD_CART_FROM_STORAGE: {
+            return {
+                ...state,
+                cart: action.payload,
+            };
+        }
         case TYPES.READ_STATE:{
             const { products, cart } = action.payload;
 

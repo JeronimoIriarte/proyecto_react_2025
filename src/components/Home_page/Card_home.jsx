@@ -23,7 +23,7 @@ const Tarjeta = (props) => {
                 <div className={styles.image_content}>
                     <h3>{title}</h3>
                     <p>${price.toLocaleString("es-ES")}</p>
-                    <Link href="/productos" className={styles.boton}>Ver Ofertas</Link>
+                    <Link href="/productos?filtro=Ofertas" className={styles.boton}>Ver Ofertas</Link>
                 </div>
             </div>
         </>

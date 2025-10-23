@@ -164,7 +164,14 @@
 }
 
 .filtroBotones button:hover {
+  background-color: var(--color-secondary-dark);
+  transform: translateY(-1px);
+}
+
+.filtroBotones button.active {
   background-color: var(--color-secondary);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transform: translateY(-1px);
 }
 

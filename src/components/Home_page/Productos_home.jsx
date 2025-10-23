@@ -10,7 +10,6 @@ import { products } from '../../data/products';
 
 
 export default function SeccionProductos() {
-  // Datos de ejemplo de las camisetas
 
   const productosEnOferta = products.filter((producto) => producto.onSale === true);
 

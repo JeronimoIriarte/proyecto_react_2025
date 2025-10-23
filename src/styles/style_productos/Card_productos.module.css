@@ -151,6 +151,12 @@
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  transition: border-color 0.3s ease; 
+}
+
+
+.sizeSelect.errorBorder {
+  border-color: #dc3545;
 }
 
 .addToCartButton {
@@ -177,23 +183,35 @@
   cursor: not-allowed;
 }
 
-/* Estilos para el mensaje de confirmación */
-.confirmationMessage {
+
+.messageBox {
   margin-top: 1rem;
   padding: 0.75rem;
-  background-color: #e9f7ef;
-  color: #155724;
-  border: 1px solid #c3e6cb;
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  border: 1px solid;
 }
 
-/* Clase que se añade para mostrar el mensaje */
-.confirmationMessage.show {
+
+.success {
+  background-color: #e9f7ef;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+
+.messageBox.show {
   opacity: 1;
   transform: translateY(0);
 }
