@@ -47,7 +47,7 @@ const Main_Productos = () => {
                 <h2 className={styles.pageTitle}>Catálogo de Productos</h2>
                 <div className={styles.contenedorDeProductos}>
                     <div className={styles.filtro}>
-                        <h3>Filtro de camisetas</h3>
+                        <h3>Filtros de camisetas</h3>
                         <div className={styles.filtroBotones}>
                             <button onClick={() => handleFilterChange("All")}>
                                 Todos

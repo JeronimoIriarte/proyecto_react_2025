@@ -46,7 +46,9 @@
     margin-bottom: 2rem;
 }
 
+
 .filtroBotones button {
+    width: 180px;
     margin: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: #007bff;
@@ -61,4 +63,39 @@
 
 .filtroBotones button:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .contenedorDeProductos {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .filtro {
+        position: static;
+        margin: 1rem 0;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem 0.5rem;
+    }
+
+    .filtroBotones {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filtroBotones button {
+        width: 140px;
+        font-size: 14px;
+        margin: 0.25rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .productGrid {
+        margin: 0;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }

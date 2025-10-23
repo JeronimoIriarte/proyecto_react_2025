@@ -67,10 +67,27 @@
 
 .productGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  margin-right: 3rem;
-  margin-left: 3rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+
+@media (max-width: 1200px) {
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
 }
 
 .loadingContainer {
@@ -84,6 +101,23 @@
 .loadingGif {
   width: 400px;
   height: 400px;
+}
+
+
+@media (max-width: 768px) {
+  .loadingContainer {
+    position: fixed;
+    inset: 0; 
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,0.9);
+    z-index: 1500;
+  }
+
+  .loadingGif {
+    width: 180px;
+    height: 180px;
+  }
 }
 
 .filtro {
@@ -103,21 +137,35 @@
   margin-bottom: 2rem;
 }
 
+.filtroBotones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: center;
+}
+
 .filtroBotones button {
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
+  width: 180px;
+  margin: 0.25rem;
+  padding: 0.6rem 1rem;
   background-color: var(--color-primary);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 15px;
-  font-weight: bolder ;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .filtroBotones button:hover {
   background-color: var(--color-secondary);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
@@ -146,10 +194,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 1rem 0.5rem;
+  }
+
+  .filtroBotones {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .filtroBotones button {
+    width: 140px; 
     font-size: 14px;
-    margin: 0.3rem;
+    margin: 0.25rem;
+    padding: 0.5rem 0.75rem;
   }
 }

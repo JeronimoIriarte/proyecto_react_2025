@@ -114,3 +114,14 @@
 .radioGroup input[type="radio"] {
     accent-color: #007bff;
 }
+
+@media (max-width: 768px) {
+    .formPage {
+        width: 100%;
+        margin: 20px;
+    }
+
+    .inputButton {
+        width: 40%;
+    }
+}

@@ -1,6 +1,6 @@
-import productsData from '../data/products.json';
+import productsData from '@/data/products.json';
 
 export const shoppingCartInitialState = {
     products: productsData.products,
-    cart: []
+    cart: productsData.cart
 };
