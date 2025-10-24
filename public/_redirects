@@ -1,5 +1,1 @@
 /* /index.html 200
-
-
-
-//(Esta regla le dice a Netlify: "Para cualquier ruta (/*), sirve el archivo /index.html, pero mantén el código de estado 200 (éxito) en la URL del usuario, engañando" así al navegador para que el enrutador de Next.js se haga cargo).
