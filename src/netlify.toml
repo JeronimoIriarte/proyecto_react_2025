@@ -1,0 +1,16 @@
+# netlify.toml (en la raíz)
+# Configura el comando de compilación (build) y el directorio de publicación (out)
+[build]
+  command = "npm run build"
+  publish = "out"
+
+# Define la regla de redirección para manejar el enrutamiento interno de Next.js
+# Esto resuelve el error 404 de "No se procesaron reglas de redirección"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Asegura que se use el plugin oficial de Netlify para Next.js
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
