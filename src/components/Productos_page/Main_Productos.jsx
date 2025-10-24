@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import productsData from "@/data/products.json";
 import styles from '@/styles/style_productos/GrillaDeProductos_productos.module.css';
-import Card_productos from '@/components/Productos_page/Card_productos';
+import Card_productos from '@/components/Productos_page/Card_productos.jsx';
 
 
 const Main_Productos = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useRef } from 'react';
-import { ShoppingCartContext } from '@/pages/carrito/ShoppingCartContextProvider';
+import { ShoppingCartContext } from '@/pages/carrito/ShoppingCartContextProvider.jsx';
 import styles from '@/styles/style_productos/Card_productos.module.css';
 
 export default function Card_productos({ product, context = 'products', deleteFromCart }) {

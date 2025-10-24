@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Metatags from "@/components/Metatags";
-import SobreNosotrosContent from "@/components/about_us_page/SobreNosotrosContent";
+import Navbar from "@/components/Navbar.jsx";
+import Footer from "@/components/Footer.jsx";
+import Metatags from "@/components/Metatags.jsx";
+import SobreNosotrosContent from "@/components/about_us_page/SobreNosotrosContent.jsx";
 
 export default function Nosotros() {
   return (

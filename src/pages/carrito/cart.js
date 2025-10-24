@@ -2,8 +2,8 @@ import Head from "next/head";
 import Navbar from "@/components/Navbar.jsx";
 import Footer from "@/components/Footer.jsx";
 import Metatags from "@/components/Metatags.jsx";
-import ShoppingCart from "@/components/ShoppingCart_page/ShoppingCart";
-import SimulacionCompra from "@/components/ShoppingCart_page/SimulacionCompra";
+import ShoppingCart from "@/components/ShoppingCart_page/ShoppingCart.jsx";
+import SimulacionCompra from "@/components/ShoppingCart_page/SimulacionCompra.jsx";
 import productStyles from '@/styles/style_productos/GrillaDeProductos_productos.module.css';
 import cartStyles from '@/styles/style_productos/ShoppingCart_productos.module.css';
 
