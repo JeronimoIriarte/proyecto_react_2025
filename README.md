@@ -8,7 +8,7 @@
 <br>
 
 <p align="center">
-  <img src="https://i.imgur.com/EXAMPLE.png" alt="Panozzo Indumentaria Screenshot" width="800"/>
+  <img src="/images/EXAMPLE.png" alt="Panozzo Indumentaria Screenshot" width="800"/>
 </p>
 
 <p align="center">
