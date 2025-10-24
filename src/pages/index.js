@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar.jsx";
+import Footer from "@/components/Footer.jsx";
 import SeccionPrincipal from "@/components/Home_page/Header_home";
 import SeccionProductos from "@/components/Home_page/Productos_home";
 import SeccionComentarios from "@/components/Home_page/Comentarios_home";
-import Metatags from "@/components/Metatags";
+import Metatags from "@/components/Metatags.jsx";
 
 export default function Home() {
   return (
