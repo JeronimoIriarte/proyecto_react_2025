@@ -85,7 +85,7 @@ Sigue estos pasos para levantar el proyecto en tu entorno local.
 ```
 
 ## 🛠️ Diseñado por:
-1.  **Jeronimo Iriarte**
-1.  **Montenegro Franco**
-1.  **Medina Jonathan**
-1.  **Conti Franco**
+1.  **Iriarte Jeronimo**
+2.  **Montenegro Franco**
+3.  **Medina Jonathan**
+4.  **Conti Franco**
