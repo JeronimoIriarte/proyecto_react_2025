@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": "src", // <--- Establece la raíz de los alias
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["*"]    // <--- Hace que @/ lo resuelva como si estuviera en la base (src)
     }
   }
 }

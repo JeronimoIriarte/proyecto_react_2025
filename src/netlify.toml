@@ -1,0 +1,15 @@
+# netlify.toml (en la raíz)
+[build]
+  command = "npm run build"
+  publish = "out"
+
+# AÑADE ESTA SECCIÓN para fijar la versión de Node.js
+[build.environment]
+  NODE_VERSION = "18" 
+
+# ... (resto de tu archivo)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+# ...
