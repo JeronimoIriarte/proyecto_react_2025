@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import cloudinaryConfig from "@/components/CloudinaryConfig";
-import styles from '@/styles/style_PanelDeControl/Form_panelDeControl.module.css'
+import styles from '../../styles/style_PanelDeControl/Form_panelDeControl.module.css'
 
 const initialForm = {
     id: null,

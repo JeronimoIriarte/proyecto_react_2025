@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from "@/styles/Style_PanelDeControl/Card_panelDeControl.module.css";
+import styles from "../../styles/style_PanelDeControl/Card_panelDeControl.module.css";
 export default function Card_panelDeControl({ product, deleteProduct, setDataToEdit }) {
     
     const { title, price, imageUrl, imageAltUrl, description } = product;
