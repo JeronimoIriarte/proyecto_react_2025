@@ -6,9 +6,8 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import styles from '@/styles/style_home/Productos_home.module.css';
 import Card from './Card_home';
-/* import { products } from '../../data/products'; */
-import productsData from '../../data/products.json'; // <-- Importa el objeto JSON
-
+import { products } from '../../data/products';
+const productsData = products; // Asegúrate de que 'products' esté correctamente importado
 
 export default function SeccionProductos() {
 
