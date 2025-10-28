@@ -6,12 +6,13 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import styles from '@/styles/style_home/Productos_home.module.css';
 import Card from './Card_home';
-import { products } from '../../data/products';
+/* import { products } from '../../data/products'; */
+import productsData from '../../data/products.json'; // <-- Importa el objeto JSON
 
 
 export default function SeccionProductos() {
 
-  const productosEnOferta = products.filter((producto) => producto.onSale === true);
+  const productosEnOferta = productsData.filter((producto) => producto.onSale === true);
 
   return (
     <>
@@ -35,10 +36,10 @@ export default function SeccionProductos() {
             },
           }}
         >
-          {productosEnOferta.map((src, pepe) => (
-            <SwiperSlide key={pepe}>
+          {productosEnOferta.map((producto, index) => (
+            <SwiperSlide key={index}>
               <div className={styles.card}>
-                <Card key={pepe} productos={src} />
+                <Card key={index} productos={producto} />
               </div>
             </SwiperSlide>
           ))}
