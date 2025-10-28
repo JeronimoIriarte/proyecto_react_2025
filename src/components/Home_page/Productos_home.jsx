@@ -7,10 +7,11 @@ import { Navigation, Pagination } from 'swiper/modules';
 import styles from '@/styles/style_home/Productos_home.module.css';
 import Card from './Card_home';
 import productsData from '../../data/products.json';
+const products = productsData.products;
 
 export default function SeccionProductos() {
 
-  const productosEnOferta = productsData.filter((producto) => producto.onSale === true);
+  const productosEnOferta = products.filter((producto) => producto.onSale === true);
 
   return (
     <>
