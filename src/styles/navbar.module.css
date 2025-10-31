@@ -118,8 +118,20 @@
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
   cursor: pointer;
   gap: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #333; 
+  border-radius: 50%; 
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+  background-color: var(--color-secondary, #ff8c00);
 }
 
 .bar {
