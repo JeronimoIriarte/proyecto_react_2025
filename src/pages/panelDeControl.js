@@ -53,6 +53,13 @@ export const Crud = () => {
         readDb();
     }, []);
 
+// A => Front te envio un producto nuevo con X caracteristcas
+
+// B => Back recibe el producto con X caracteristicas y lo envia a la base de datos
+
+// C => La base de datos almacena el producto
+
+
     const createProduct = async (product) => {
 
         product.id = String(Date.now());

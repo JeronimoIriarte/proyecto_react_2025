@@ -212,3 +212,25 @@
 .cancelButton:hover {
     background-color: #c82333;
 }
+
+@media (max-width: 768px) {
+    .modal {
+        min-width: 90%;
+    }
+
+    .form_datosPersonales {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cardPreview .card {
+        width: 100%;
+    }
+
+    .cardWrapper{
+        flex-direction: column;
+    }
+    .cardWrapper input {
+        width: 100%;
+    }
+}
