@@ -66,6 +66,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* 2. NUEVO ESTILO PARA EL CONTENEDOR DE ACCIONES */
+.navbarActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacio entre el carrito y la hamburguesa */
+}
+
 /* --- Carrito de Compras --- */
 .navbarCart {
   position: relative;

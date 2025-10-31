@@ -212,3 +212,63 @@
 .cancelButton:hover {
     background-color: #c82333;
 }
+
+/* --- ESTILOS RESPONSIVOS --- */
+
+/* Para tablets y pantallas más pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    .modal {
+        min-width: 90%;
+        padding: 20px;
+    }
+
+    .form_datosPersonales {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .cardWrapper {
+        flex-wrap: wrap;
+    }
+
+    .modal h3 {
+        font-size: 20px;
+    }
+
+    .submitButton,
+    .cancelButton {
+        width: 100%;
+    }
+}
+
+/* Para teléfonos móviles (hasta 480px) */
+@media (max-width: 480px) {
+    .modal {
+        padding: 15px;
+        max-height: 90vh; /* Evita que el modal sea más alto que la pantalla */
+        overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+    }
+
+    .form {
+        gap: 15px;
+    }
+
+    .form_input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .cardNumber {
+        font-size: 16px;
+    }
+
+    .cardDetails {
+        font-size: 12px;
+    }
+}

@@ -84,9 +84,9 @@
 }
 
 .modal button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-size: 15px;
-    background-color: #007bff;
+    background-color: #ff4d4d;
     color: white;
     border: none;
     border-radius: 5px;
@@ -95,7 +95,7 @@
 }
 
 .modal button:hover {
-    background-color: #0056b3;
+    background-color: #d93d3d;
 }
 
 .closeButton {
