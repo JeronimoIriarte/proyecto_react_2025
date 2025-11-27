@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -6,43 +6,75 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import styles from '@/styles/style_home/Productos_home.module.css';
 import Card from './Card_home';
-import productsData from '../../data/products.json';
-const products = productsData.products;
+import axios from 'axios';
 
 export default function SeccionProductos() {
 
-  const productosEnOferta = products.filter((producto) => producto.onSale === true);
+  const [ofertas, setOfertas] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchOfertas = async () => {
+      try {
+        const ENDPOINT = "http://localhost:5000/products";
+        const response = await axios.get(ENDPOINT);
+        
+        // Filtramos solo los productos que están en oferta
+        const productosEnOferta = response.data.filter((producto) => producto.onSale === true);
+        
+        setOfertas(productosEnOferta);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error obteniendo ofertas:", error);
+        setIsLoading(false);
+      }
+    };
+
+    fetchOfertas();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section className={styles.productosSection}>
+        <h2>Cargando Ofertas...</h2>
+      </section>
+    );
+  }
 
   return (
     <>
       <section className={styles.productosSection}>
         <h2>Ofertas</h2>
-        <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={20}
-          slidesPerView={1} // Muestra 3 imágenes a la vez
-          navigation // Habilita las flechas de navegación
-          pagination={{ clickable: true }} // Habilita los puntos de paginación
-          breakpoints={{
-            600: {
-              slidesPerView: 1, // 1 imagen en pantallas pequeñas
-            },
-            790: {
-              slidesPerView: 2, // 2 imágenes en pantallas medianas
-            },
-            1024: {
-              slidesPerView: 3, // 3 imágenes en pantallas grandes
-            },
-          }}
-        >
-          {productosEnOferta.map((producto, index) => (
-            <SwiperSlide key={index}>
-              <div className={styles.card}>
-                <Card key={index} productos={producto} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {ofertas.length > 0 ? (
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            breakpoints={{
+              600: {
+                slidesPerView: 1,
+              },
+              790: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+            {ofertas.map((producto) => (
+              <SwiperSlide key={producto.id}>
+                <div className={styles.card}>
+                  <Card productos={producto} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <p>No hay ofertas disponibles en este momento.</p>
+        )}
       </section>
     </>
   );
