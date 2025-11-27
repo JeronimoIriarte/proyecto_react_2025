@@ -64,6 +64,12 @@ export const shoppingCartReducer = (state, action) => {
                 cart: [],
             };
         }
+        case TYPES.SET_PRODUCTS: {
+            return {
+                ...state,
+                products: action.payload // Guarda los productos que vienen de la BD
+            };
+        }
         default:
             return state;
     }

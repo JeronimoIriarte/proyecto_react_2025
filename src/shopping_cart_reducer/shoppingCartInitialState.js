@@ -1,6 +1,4 @@
-import productsData from '@/data/products.json';
-
 export const shoppingCartInitialState = {
-    products: productsData.products,
-    cart: productsData.cart
+    products: [], // Empieza vacío hasta que el backend responda
+    cart: []      // Empieza vacío (se llenará con LocalStorage después)
 };
