@@ -6,10 +6,13 @@ export default function Card_productos({ product, context = 'products', deleteFr
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState({ visible: false, text: '', type: '' });
-  const { id, title, price, imageUrl, imageAltUrl, description, quantity } = product;
   const { addToCart } = useContext(ShoppingCartContext);
-
   const sizeSelectRef = useRef(null);
+
+  // 1. PROTECCIÓN: Si el producto viene vacío, no renderizamos nada para evitar el crash
+  if (!product) return null;
+
+  const { id, title, price, imageUrl, imageAltUrl, description, quantity } = product;
 
   const openModal = () => {
     setMessage({ visible: false, text: '', type: '' });
@@ -17,29 +20,31 @@ export default function Card_productos({ product, context = 'products', deleteFr
   };
   const closeModal = () => setIsModalOpen(false);
 
-    const [currentImage, setCurrentImage] = useState(imageUrl);
-    const handleMouseEnter = () => {
-      if (imageAltUrl) {
-        setCurrentImage(imageAltUrl);
-      }
-    };
-    const handleMouseLeave = () => {
-      setCurrentImage(imageUrl);
-    };
-
-    const getNumericPrice = (priceString) => {
-        if (typeof priceString !== 'string') return 0;
-        return parseFloat(priceString.replace(/[^0-9.-]+/g,"")) || 0;
+  const [currentImage, setCurrentImage] = useState(imageUrl);
+  
+  const handleMouseEnter = () => {
+    if (imageAltUrl) {
+      setCurrentImage(imageAltUrl);
     }
-    
-    const numericPrice = getNumericPrice(price);
+  };
+  const handleMouseLeave = () => {
+    setCurrentImage(imageUrl);
+  };
 
+  // 2. MEJORA: Función para limpiar el precio robusta
+  const getNumericPrice = (value) => {
+      if (!value) return 0; // Si es undefined o null, devuelve 0
+      if (typeof value === 'number') return value; // Si ya es número, devuélvelo
+      // Si es string, límpialo
+      return parseFloat(String(value).replace(/[^0-9.-]+/g,"")) || 0;
+  }
+  
+  const numericPrice = getNumericPrice(price);
 
   const handleAddToCart = (productId) => {
     const selectedSize = sizeSelectRef.current.value;
 
     if (!selectedSize) {
-      // Mostrar mensaje de error
       setMessage({ visible: true, text: 'Por favor, selecciona una talla.', type: 'error' });
       sizeSelectRef.current.classList.add(styles.errorBorder);
       setTimeout(() => {
@@ -49,7 +54,6 @@ export default function Card_productos({ product, context = 'products', deleteFr
       return;
     }
 
-    // Mostrar mensaje de éxito
     addToCart(productId);
     setMessage({ visible: true, text: '✓ Producto añadido correctamente', type: 'success' });
     setTimeout(() => {
@@ -61,11 +65,21 @@ export default function Card_productos({ product, context = 'products', deleteFr
     <>
       <div className={styles.card}>
         <div className={styles.imageContainer}>
-          <img src={currentImage} alt={title} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={styles.cardImage}/>
+          {/* Agregamos protección por si no hay imagen */}
+          <img 
+            src={currentImage || "/images/placeholder.png"} 
+            alt={title || "Producto"} 
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave} 
+            className={styles.cardImage}
+          />
         </div>
         <div className={styles.cardContent}>
-          <h3 className={styles.cardTitle}>{product.title}</h3>
-          <p className={styles.cardPrice}>${product.price.toLocaleString("es-ES")}</p>
+          <h3 className={styles.cardTitle}>{title}</h3>
+          
+          {/* 3. SOLUCIÓN DEL ERROR: Usamos numericPrice que siempre es un número seguro */}
+          <p className={styles.cardPrice}>${numericPrice.toLocaleString("es-ES")}</p>
+          
           { context === 'products' ? (
             <button onClick={openModal} className={styles.cardButton}>
               Ver detalles
@@ -91,8 +105,9 @@ export default function Card_productos({ product, context = 'products', deleteFr
             <button className={styles.closeButton} onClick={closeModal}>&times;</button>
             <img src={currentImage} alt={title} className={styles.modalImage} />
             <div className={styles.modalDetails}>
-              <h2>{product.title}</h2>
-              <p className={styles.modalPrice}>${price}</p>
+              <h2>{title}</h2>
+              {/* Usamos numericPrice aquí también */}
+              <p className={styles.modalPrice}>${numericPrice.toLocaleString("es-ES")}</p>
               <p className={styles.modalDescription}>{description}</p>
               
               {message.visible && (
