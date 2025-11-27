@@ -1,52 +1,70 @@
-import React from 'react'
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import productsData from "@/data/products.json";
+import axios from 'axios';
 import styles from '@/styles/style_productos/GrillaDeProductos_productos.module.css';
 import Card_productos from '@/components/Productos_page/Card_productos.jsx';
 
-
 const Main_Productos = () => {
 
-    const products = productsData.products;
-    const [productos] = useState(products); // Todos los productos
-    const [filteredProducts, setFilteredProducts] = useState(productos); // Productos a mostrar
-    const [filter, setFilter] = useState("All"); // Filtro actual
-    const [isLoading, setIsLoading] = useState(false); // Estado de carga
-    const router = useRouter(); // Inicializar el router
+    // Estados para los datos del servidor
+    const [products, setProducts] = useState([]); // Guardamos TODOS los productos aquí
+    const [filteredProducts, setFilteredProducts] = useState([]); // Guardamos los que se ven en pantalla
+    const [filter, setFilter] = useState("All");
+    const [isLoading, setIsLoading] = useState(true);
+    
+    const router = useRouter();
 
-    // useEffect para leer la URL al cargar el componente
+    // 1. CARGAR PRODUCTOS DEL BACKEND
     useEffect(() => {
-        if (router.isReady) {
-            const initialFilter = router.query.filtro;
-            if (initialFilter) {
-                // Si hay un filtro en la URL, lo aplicamos
-                handleFilterChange(initialFilter);
+        const fetchProducts = async () => {
+            try {
+                // Petición al backend real
+                const response = await axios.get("http://localhost:5000/products");
+                const data = response.data;
+                
+                setProducts(data); // Guardamos la "copia maestra" de los datos
+
+                // Si viene con un filtro en la URL (ej: desde el Home), lo aplicamos
+                if (router.isReady && router.query.filtro) {
+                    const category = router.query.filtro;
+                    setFilter(category);
+                    applyFilter(category, data); // Filtramos usando los datos recién llegados
+                } else {
+                    setFilteredProducts(data); // Si no hay filtro, mostramos todo
+                    setIsLoading(false);
+                }
+            } catch (error) {
+                console.error("Error cargando productos:", error);
+                setIsLoading(false);
             }
+        };
+
+        fetchProducts();
+    }, [router.isReady, router.query.filtro]); // Se ejecuta al cargar o si cambia el filtro de URL
+
+
+    // Función auxiliar para filtrar los datos (sin delay)
+    const applyFilter = (category, dataOrigin) => {
+        let result = [];
+        if (category === "All") {
+            result = dataOrigin;
+        } else if (category === "Ofertas") {
+            result = dataOrigin.filter((product) => product.onSale === true);
+        } else {
+            result = dataOrigin.filter((product) => product.category === category);
         }
-    }, [router.isReady, router.query.filtro]);
+        setFilteredProducts(result);
+        setIsLoading(false);
+    };
 
-
+    // 2. MANEJAR CLIC EN BOTONES DE FILTRO (Con delay visual)
     const handleFilterChange = (category) => {
         setIsLoading(true);
+        setFilter(category);
+        
+        // Mantenemos tu efecto de carga de 0.5s
         setTimeout(() => {
-            setFilter(category);
-            if (category === "All") {
-                setFilteredProducts(products);
-                return setIsLoading(false);
-            }
-            if (category === "Ofertas") {
-                const ofertas = products.filter(
-                    (product) => product.onSale === true
-                );
-                setFilteredProducts(ofertas);
-            } else {
-                const filtered = products.filter(
-                    (product) => product.category === category
-                );
-                setFilteredProducts(filtered);
-            }
-            setIsLoading(false);
+            applyFilter(category, products);
         }, 500);
     };
 
@@ -137,7 +155,6 @@ const Main_Productos = () => {
                 </div>
             </main>
         </>
-
     )
 }
 
